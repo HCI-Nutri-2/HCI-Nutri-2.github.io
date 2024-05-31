@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Profile</title>
+  <link href="profile.css" rel="stylesheet" type="text/css" href="profile.css" />
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="../global/assets/icons/rubik.png" alt="">
+    </div>
+    <div id="search-bar">
+      <input type="text" name="search-bar" id="input">
+      <img src="../global/assets/icons/search.svg" alt="search icon">
+    </div>
+    <div class="header-button-wrapper">
+      <div id="login-header-button">
+        <img src="../global/assets/icons/user.png" alt="">
+      </div>
+      <div id="history-header-button">
+        <img src="" alt="">
+      </div>
+      <div id="account-order-button">
+        <img src="../global/assets/icons/user.png" alt="">
+      </div>
+    </div>
+  </header>
+  <div class="promo">
+    <img src="Carousel.png" class="foto-promo">
+  </div>
+  <div class="background">
+    <div class="topbar">
+
+      <button class="nav_button" onclick="toogleContainer1()">Profile</button>
+      <button class="nav_button" onclick="toogleContainer2()">Address</button>
+      <button class="nav_button" onclick="toogleContainer3()">E-Wallet</button>
+      <button class="nav_button" onclick="toogleContainer4()">Debit Card</button>
+
+    </div>
+    <div id="container1">
+      <div class="data">
+        <div id="biodata_container">
+          <div class="bio-image-container" id="bio-left">
+            <img src="G1.jpg" id="bio-image-left" />
+          </div>
+          <div class="data_container">
+            <img src="profile.png" class="foto-pengguna" />
+            <div id="biodata_title">Profile</div>
+            <hr width="700">
+            <div class="biodata_content_container">
+              <div class="info">Name</div>
+              <div id="name" class="content">Dheovan Winata Alvian</div>
+              <input type="text" id="name-input" class="edit-input" />
+              <button onclick="editName()" id="edit-name" class="edit">Edit</button>
+              <button onclick="confirmName()" id="confirm-name" class="confirm">Confirm</button>
+            </div>
+
+            <div class="biodata_content_container">
+              <div class="info">Email</div>
+              <div id="email" class="content">DheovanAlvian@gmail.com</div>
+              <input type="text" id="email-input" class="edit-input" />
+              <button onclick="editEmail()" id="edit-email" class="edit">Edit</button>
+              <button onclick="confirmEmail()" id="confirm-email" class="confirm">Confirm</button>
+
+            </div>
+
+            <div class="biodata_content_container">
+              <div class="info">Phone Number</div>
+              <div id="phone" class="content">081323456708</div>
+              <input type="text" id="phone-input" class="edit-input" />
+
+              <button onclick="editPhone()" id="edit-phone" class="edit">Edit</button>
+              <button onclick="confirmPhone()" id="confirm-phone" class="confirm">Confirm</button>
+            </div>
+          </div>
+          <div class="bio-image-container" id="bio-right">
+            <img src="G2.jpg" id="bio-image-right" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="container2">
+      <div class="data">
+        <div id="alamat_container">
+          <img src="Map.jpg" id="alamat_image" />
+          <div id="alamat">
+            <div class="title">Address</div>
+            <div id="detail_container">
+              <div class="element_container">
+                <p id="alamat1" class="detail">Jalan Purwosari-Sayung-Purkatoro 180 RT 002/001, Jawa Tengah, provinsi
+                  Semarang, kota magelang, Indonesia kode pos 51364 </p>
+                <input type="text" id="alamat1-input" class="alamat-input" />
+                <button onclick="editAlamat1()" id="alamat1-button-edit" class="edit_button">Edit</button>
+                <button onclick="confirmAlamat1()" id="alamat1-button-confirm" class="confirm_button">Confirm</button>
+              </div>
+              <div class="element_container">
+                <p id="alamat2" class="detail">Jalan Purwosari-Sayung-Purkatoro 180 RT 002/001, Jawa Tengah, provinsi
+                  Semarang, kota magelang, Indonesia kode pos 51364 </p>
+                <input type="text" id="alamat2-input" class="alamat-input" />
+                <button onclick="editAlamat2()" id="alamat2-button-edit" class="edit_button">Edit</button>
+                <button onclick="confirmAlamat2()" id="alamat2-button-confirm" class="confirm_button">Confirm</button>
+              </div>
+              <div class="element_container">
+                <p id="alamat3" class="detail">Jalan Purwosari-Sayung-Purkatoro 180 RT 002/001, Jawa Tengah, provinsi
+                  Semarang, kota magelang, Indonesia kode pos 51364 </p>
+                <input type="text" id="alamat3-input" class="alamat-input" />
+                <button onclick="editAlamat3()" id="alamat3-button-edit" class="edit_button">Edit</button>
+                <button onclick="confirmAlamat3()" id="alamat3-button-confirm" class="confirm_button">Confirm</button>
+              </div>
+              <div class="element_container">
+                <p id="alamat4" class="detail">Jalan Purwosari-Sayung-Purkatoro 180 RT 002/001, Jawa Tengah, provinsi
+                  Semarang, kota magelang, Indonesia kode pos 51364 </p>
+                <input type="text" id="alamat4-input" class="alamat-input" />
+                <button onclick="editAlamat4()" id="alamat4-button-edit" class="edit_button">Edit</button>
+                <button onclick="confirmAlamat4()" id="alamat4-button-confirm" class="confirm_button">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="container3">
+      <div class="data">
+
+        <div id="ewallet_container">
+          <img src="Map1.jpg" id="ewallet_image" />
+          <div class="content_container">
+            <div class="ewallet">E-Wallet</div>
+            <div class="Kotak">
+              <div class="P1">GoPay</div>
+              <div class="saldo1">Rp --.---,--</div>
+            </div>
+            <div class="Kotak">
+              <div class="P2">OVO</div>
+              <div class="saldo2">Rp --.---,--</div>
+            </div>
+            <div class="Kotak">
+              <div class="P3">DANA</div>
+              <div class="saldo3">Rp --.---,--</div>
+            </div>
+            <div class="Kotak">
+              <div class="P4">ShopeePay</div>
+              <div class="saldo4">Rp --.---,--</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="container4">
+      <div class="data">
+        <div id="bank_container">
+          <div id="bank_image">
+            <img src="background1.jpg" id="background1" />
+          </div>
+          <div id="rekening_container">
+            <p id="rekening_title">Debit Card</p>
+            <div id="card_container">
+              <img src="left-arrow.png" id="arrow1" class="arrow" onclick="toogleCardLeft()" />
+              <img src="card1.jpg" id="card1" class="card_image" />
+              <img src="right-arrow.png" id="arrow2" class="arrow" onclick="toogleCardRight()" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="profile.js"></script>
+
+</body>
+
+</html>

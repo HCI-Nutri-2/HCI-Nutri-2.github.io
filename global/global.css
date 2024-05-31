@@ -1,0 +1,177 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+/* variables */
+:root {
+  --1: #F3CA52;
+  --2: #F6E9B2;
+  --3: #0A6847;
+  --4: #7ABA78;
+}
+
+/* fonts */
+@font-face {
+  font-family: 'fonseca-bold';
+  src: url(../global/assets/fonts/Fonseca-Bold.otf);
+}
+
+.fonsecab {
+  font-family: 'fonseca-bold';
+}
+
+@font-face {
+  font-family: 'noir-medium';
+  src: url(../global/assets/fonts/Noir_medium.otf);
+}
+
+.noir {
+  font-family: 'noir';
+}
+
+@font-face {
+  font-family: 'moorley';
+  src: url(../global/assets/fonts/Moorley\ Hoosten.ttf);
+}
+
+.moorley {
+  font-family: 'moorley';
+}
+
+/* imgs */
+img {
+  object-fit: cover;
+  -webkit-user-drag: none;
+  -webkit-user-modify: read-only;
+}
+
+.fit-img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.hfit-img {
+  min-height: 100%;
+}
+
+.wfit-img {
+  min-width: 100%;
+}
+
+/* display */
+.rad5 {
+  border-radius: 5px;
+}
+
+.vcontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+}
+
+.center {
+  align-items: center;
+}
+
+.sbet {
+  justify-content: space-between;
+}
+
+.seve {
+  justify-content: space-evenly;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+.f1 {
+  flex: 1;
+}
+
+.w100 {
+  width: 100%;
+}
+
+/* padding & margins */
+.pad5 {
+  padding: 5px;
+}
+
+.pad5a {
+  padding: 0 5px;
+}
+
+.pad5b {
+  padding: 5px 0;
+}
+
+/* colors */
+.col1 {
+  color: var(--1);
+}
+
+.bcol1 {
+  background-color: var(--1);
+}
+
+.col2 {
+  color: var(--2);
+}
+
+.bcol2 {
+  background-color: var(--2);
+}
+
+.col3 {
+  color: var(--3);
+}
+
+.bcol3 {
+  background-color: var(--3);
+}
+
+.col4 {
+  color: var(--4);
+}
+
+.bcol4 {
+  background-color: var(--4);
+}
+
+/* style resets */
+.res-input {
+  border: none;
+  background-color: transparent;
+}
+
+.res-input:focus {
+  outline: none;
+}
+
+.res-button {
+  border: none;
+  background-color: transparent;
+}
+
+.res-scroll::-webkit-scrollbar {
+  /* removes scrollbar */
+  display: none;
+}
+
+.res-scroll {
+  /* removes scrollbar */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,0 +1,370 @@
+body {
+    background-color: #F6E9B2;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    /* border-style: solid; */
+    display: flex;
+    flex-direction: row;
+}
+
+.subContainer1 {
+    width: 55%;
+    height: 1000px;
+    margin-left: 5%;
+    margin-top: 90px;
+    margin-bottom: 50px;
+    /* border-style: solid; */
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    /* margin-inline: auto; */
+}
+
+.foodDesc::-webkit-scrollbar {
+    width: 13px;
+    border-radius: 10px;
+}
+
+.subContainer1::-webkit-scrollbar {
+    width: 20x;
+    border-radius: 10px;
+}
+
+.foodDesc::-webkit-scrollbar-track {
+    width: 15px;
+    background: #49A49E;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    width: 15px;
+    background: #94B89C;
+    border-radius: 10px;
+}
+
+.foodDesc::-webkit-scrollbar-thumb {
+    height: 10px;
+    background: #EEFFE8;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #49A49E;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 10px;
+    background: #EEFFE8;
+    border-radius: 10px;
+    border-style: solid;
+    border-width:5px;
+    border-color: #94B89C;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #68886f;
+}
+
+.subContainer2 {
+    width: 35%;
+    height: 25%;
+    margin-left: 10%;
+    margin-top: 90px;
+    margin-bottom: 50px;
+    /* border-style: solid; */
+    display: flex;
+    flex-direction: column;
+}
+
+.shoppingCartText {
+    margin-left: 50px;
+    margin-top: 30px;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.shoppingCart {
+    width: 900px;
+    height: 70%;
+    /* border-style: solid; */
+    border-radius: 20px;
+    margin-bottom: 25px;
+    background-color: #0D5D56;
+    box-shadow: 4px 6px #00000065;
+    padding-top: 6px;
+    padding-bottom: 10px;
+}
+
+.foodImage {
+    width: 120px;
+    height: 120px;
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 8px;
+    float: left;
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.foodTitle {
+    width: 500px;
+    height: 25px;
+    /* border-style: solid; */
+    margin-left: 150px;
+    margin-top: 5px;
+    font-size: 20px;
+    position:inherit;
+}
+
+.foodTitleText {
+    width: 100%;
+    height: 25px;
+    /* border-style: solid; */
+    display:flex;
+    margin-left: 15px;
+    margin-top: 0px;
+    color: #ffffff;
+    text-shadow: 3.5px 2px #00000083;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+/* .manageButton {
+    width: 80px;
+    height: 35px;
+    border-style: solid;
+    border-color: #5C998A;
+    border-radius: 9px;
+    background-color: #5C998A;
+    display: flexbox; */
+    /* position: absolute;
+    margin-left: 220px;
+    padding: 5px;
+    color: #ffffff;
+    font-size: 16px; */
+/* } */
+
+/* .manageText {
+    color: #ffffff;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    margin-top: 2.5px;
+    margin-left: 6px;
+} */
+
+.foodDesc {
+    width: 73%;
+    height: 100px;
+    /* border-style: solid; */
+    border-radius: 8px;
+    margin-left: 166px;
+    margin-top: 10px;
+    background-color: #649591;
+    padding-top: 2px;
+    overflow: auto;
+}
+
+.foodDescText {
+    width: 90%;
+    height: auto;
+    margin-top: 5px;
+    margin-left: 7px;
+    /* position: absolute; */
+    /* border-style: solid; */
+    color: #ffffff;
+}
+
+.itemQuantity {
+    margin-top: -26px;
+    margin-right: 15px;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    float: right;
+}
+
+.paymentText {
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+}
+
+.paymentMethod {
+    width: 435px;
+    height: 650px;
+    /* border-style: solid; */
+    border-radius: 17px;
+    background-color: #0D5D56;
+    box-shadow: 8px 11px #B7CFB1;
+}
+
+.paymentPartner {
+    width: 400px;
+    height: 525px;
+    /* border-style: solid; */
+    border-radius: 15px;
+    margin-left: 15px;
+    background-color: #FFFBFB5C;
+    align-content: center;
+}
+
+.dana {
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #C6C6C6;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 0px;
+    width: 200px;
+    height: 75px;
+    margin-left: 100px;
+    background-color: #F9FCFF;
+    align-items: center;
+    box-shadow: 2px 4px  #00000042;
+}
+
+.logoDana {
+    width: 150px;
+}
+
+.gopay {
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #B5B5B5;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 0px;
+    width: 200px;
+    height: 75px;
+    margin-left: 100px;
+    margin-top: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 2px 4px  #00000042;
+}
+
+.logoGopay {
+    width: 150px;
+    height: 40px;
+}
+
+.ovo {
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #D8B1FF;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 0px;
+    width: 200px;
+    height: 75px;
+    margin-left: 100px;
+    margin-top: 20px;
+    background-color: #FCF2FF;
+    box-shadow: 2px 4px  #00000042;
+}
+
+.logoOvo {
+    width: 120px;
+}
+
+.shopeePay {
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #FFB4B4;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 0px;
+    width: 200px;
+    height: 75px;
+    margin-left: 100px;
+    margin-top: 20px;
+    background-color: #FFE1DB;
+    box-shadow: 2px 4px  #00000042;
+}
+
+.logoShopeepay{
+    width: 110px;
+    margin-top: -5px;
+}
+
+.debitCard {
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #9CDBFF;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 0px;
+    width: 200px;
+    height: 75px;
+    margin-left: 100px;
+    margin-top: 5px;
+    background-color: #EBF6FF;
+    box-shadow: 2px 4px  #00000042;
+}
+
+.logoVisaMastercard {
+    width: 150px;
+}
+
+.proceedTab {
+    width: 435px;
+    height: 320px;
+    /* border-style: solid; */
+    border-radius: 17px;
+    background-color: #0D5D56;
+    margin-top: 20px;
+    box-shadow: 8px 11px #B7CFB1;
+}
+
+.hargaPesanan {
+    color: #ffffff;
+    font-size: 28px;
+    margin-left: 20px;
+    margin-top: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.garisCheckout {
+    width: 400px;
+    color: #ffffff;
+}
+
+.hargaTotal {
+    margin-left: 20px;
+    margin-top: -60px;
+    color: #ffffff;
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.proceedButton {
+    margin-left: 40px;
+    font-size: 35px;
+    color: #ffffff;
+    border-radius: 10px;
+    margin-top: -5px;
+    width: 350px;
+    height: 65px;
+    background-color: #F3CA52;
+    border-width: 0px;
+}
+
+.kodePromo {
+    width: 100px;
+    height: 65px;
+    margin-left: 300px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border-width: 0px;
+    font-size: 20px;
+    background-color: #4C6F4F;
+    color: #ffffff;
+}

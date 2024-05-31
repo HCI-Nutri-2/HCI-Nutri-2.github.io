@@ -1,0 +1,159 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #0D5D56;
+}
+
+@font-face {
+    font-family: 'fonseca';
+    src: url(../global/assets/fonts/Fonseca-Regular.otf);
+}
+
+@font-face {
+    font-family: 'noir-medium';
+    src: url(../global/assets/fonts/Noir_medium.otf);
+}
+
+#container_right {
+    margin-left: 31px;
+
+}
+
+#title {
+    color: #F6E9B2;
+    font-size: 50px;
+    font-family: fonseca, sans-serif;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+#right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+fieldset {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+#username,
+#password {
+    margin-bottom: 45px;
+}
+
+#email {
+    margin-bottom: 36px;
+}
+
+::placeholder {
+    color: #AEE1A6;
+    font-family: noir-medium, sans-serif;
+}
+
+#username,
+#password,
+#email {
+    display: block;
+    color: #AEE1A6;
+    font-size: 15px;
+    font-weight: 500;
+    word-wrap: break-word;
+    border: none;
+    border-bottom: 2px solid #F3CA52;
+    width: 269px;
+    background-color: #0D5D56;
+    font-family: noir-medium, sans-serif;
+}
+
+.button {
+    background-color: #F3CA52;
+    display: block;
+    margin-bottom: 16px;
+    width: 269px;
+    height: 32px;
+    color: #0D5D56;
+    font-size: 15px;
+    font-family: noir-medium, sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+    border: none;
+    padding-top: 7px;
+}
+
+.no-account {
+    color: #AEE1A6;
+    font-family: noir-medium, sans-serif;
+    margin-left: 15px;
+}
+
+#login {
+    color: #F6E9B2;
+    font-size: 15px;
+    font-family: noir-medium, sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+    word-wrap: break-word;
+}
+
+#carousel {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+    margin-top: -30px;
+    margin-bottom: -50px;
+    margin-left: -30px;
+}
+
+#slider {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#slider img {
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    border: 1px solid black;
+    background: rgba(255, 255, 255, 50%);
+    padding: 0.3rem;
+}
+
+.slider-nav button {
+    width: 0.5rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+    border: none;
+    cursor: pointer;
+}
+
+.slider-nav button.active {
+    opacity: 1;
+}
