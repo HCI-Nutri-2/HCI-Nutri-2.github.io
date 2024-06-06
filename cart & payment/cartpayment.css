@@ -366,11 +366,13 @@ body {
     font-size: 35px;
     color: #ffffff;
     border-radius: 10px;
-    margin-top: -5px;
+    margin-top: -15px;
     width: 350px;
     height: 65px;
     background-color: #F3CA52;
     border-width: 0px;
+    font-family: noir-medium, sans-serif;
+    padding-top: 10px;
 }
 
 .kodePromo {
