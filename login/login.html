@@ -5,18 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="login.css" rel="stylesheet" type="text/css" />
-  <link href="../global/global.css" rel="stylesheet">
 
   <title>Login</title>
 </head>
 
 <body class="container">
-  <section class="carousel f1">
-    <div class="slider">
-      <img src="../global/imgs/salad.jpg" class="fit-img">
-      <img src="../global/imgs/spinach-omelet.jpg" class="fit-img">
+  <section id="carousel">
+    <div id="slider">
+      <img id="slide-1" src="../global/imgs/salad.jpg" alt="1">
+      <img id="slide-2" src="../global/imgs/spinach-omelet.jpg" alt="2">
     </div>
-    <div class="slider-nav"></div>
+    <div class="slider-nav">
+      <button id="button-1"></button>
+      <button id="button-2"></button>
+    </div>
   </section>
 
   <div id="right">
@@ -29,7 +31,7 @@
             value="Forgotten your password?"></a>
 
 
-        <a href="../index.html"><input class="button" type="submit" value="Sign In"></a>
+        <a href="../menu/menu.html"><input class="button" type="submit" value="Sign In"></a>
         <input class="button" type="submit" value="Continue with Google">
         <input class="button" type="submit" value="Continue with Facebook">
       </fieldset>
@@ -38,7 +40,8 @@
     </div>
   </div>
 </body>
-<script src="login.js"></script>
-<script src="../global/global.js"></script>
+<script src="login.js">
+
+</script>
 
 </html>
