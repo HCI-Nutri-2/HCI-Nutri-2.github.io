@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'noir-medium';
+  src: url(../global/fonts/Noir_medium.otf);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: noir-medium, sans-serif;
 }
 
 @font-face {
@@ -25,7 +31,7 @@ body {
   width: 461px;
   color: #808080;
   font-size: 20px;
-  font-family: Inter;
+  font-family: noir-medium, sans-serif;
   font-weight: 400;
   word-wrap: break-word;
 }
@@ -36,7 +42,7 @@ body {
   border: none;
   color: black;
   font-size: 20px;
-  font-family: Inter;
+  font-family: noir-medium, sans-serif;
   font-weight: 400;
   word-wrap: break-word;
 }
@@ -173,7 +179,7 @@ input[type="text"]:focus {
   background-color: #F6E9B2;
   color: black;
   font-size: 20px;
-  font-family: Inter;
+  font-family: noir-medium, sans-serif;
   font-weight: 400;
   word-wrap: break-word;
 }
@@ -247,7 +253,7 @@ input[type="text"]:focus {
   width: 200px;
   color: black;
   font-size: 20px;
-  font-family: Inter;
+  font-family: noir-medium, sans-serif;
   font-weight: 400;
   word-wrap: break-word;
 }
@@ -256,7 +262,7 @@ input[type="text"]:focus {
   width: 500px;
   color: #808080;
   font-size: 20px;
-  font-family: Inter;
+  font-family: noir-medium, sans-serif;
   font-weight: 400;
   word-wrap: break-word
 }
@@ -266,7 +272,7 @@ input[type="text"]:focus {
   border: none;
   color: black;
   font-size: 20px;
-  font-family: Inter;
+  font-family: noir-medium, sans-serif;
   font-weight: 400;
   word-wrap: break-word
 }
@@ -281,7 +287,7 @@ input[type="text"]:focus {
   line-height: 18.5px;
   color: black;
   font-size: 15px;
-  font-family: Inter;
+  font-family: noir-medium, sans-serif;
   word-wrap: break-word
 }
 
@@ -327,9 +333,9 @@ input[type="text"]:focus {
   /* display: inline; */
   color: black;
   font-size: 40px;
-  font-family: Noir;
   font-weight: 500;
   word-wrap: break-word;
+  font-family: noir-medium, sans-serif;
 }
 
 #detail_container {
@@ -340,6 +346,7 @@ input[type="text"]:focus {
   border: 1px black solid;
   width: 719px;
   height: 314px;
+  font-family: noir-medium, sans-serif;
 }
 
 .element_container {
@@ -355,9 +362,9 @@ input[type="text"]:focus {
   width: 400px;
   color: black;
   font-size: 20px;
-  font-family: Noir;
+  font-family: noir-medium, sans-serif;
   font-weight: 500;
-  word-wrap: break-word
+  word-wrap: break-word;
 }
 
 .alamat-input {
@@ -365,7 +372,7 @@ input[type="text"]:focus {
   width: 400px;
   color: black;
   font-size: 20px;
-  font-family: Noir;
+  font-family: noir-medium, sans-serif;
   font-weight: 500;
   word-wrap: break-word;
 }
@@ -419,7 +426,7 @@ input[type="text"]:focus {
 .ewallet {
   color: black;
   font-size: 40px;
-  font-family: Noir;
+  font-family: noir-medium, sans-serif;
   font-weight: 500px;
   word-wrap: break-word;
   margin-top: 20px;
@@ -549,7 +556,7 @@ input[type="text"]:focus {
   text-align: center;
   color: black;
   font-size: 40px;
-  font-family: Inter;
+  font-family: noir-medium, sans-serif;
   font-weight: 600;
   word-wrap: break-word;
   padding-bottom: 5px;
