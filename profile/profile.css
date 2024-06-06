@@ -3,6 +3,19 @@ body {
   padding: 0;
   background-color: #F3CA52;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@font-face {
+  font-family: 'fonsesca-bold';
+  src: url(../global/fonts/Fonseca-Bold.otf);
+}
+
+@font-face {
+  font-family: 'noir-medium';
+  src: url(../global/fonts/Noir_medium.otf);
 }
 
 .edit-input {
@@ -40,14 +53,15 @@ header {
 
   display: flex;
   align-items: center;
+  flex-direction: row;
   justify-content: space-between;
 
-  width: 100%;
+  width: 93.5%;
   height: 65px;
   padding: 0 3vw;
   gap: 3vw;
 
-  background-color: rgb(240, 240, 240);
+  background-color: #0D5D56;
   z-index: 999;
 }
 
@@ -117,7 +131,7 @@ input[type="text"]:focus {
 }
 
 .promo {
-  width: 100%;
+  width: 95%;
 }
 
 .foto-promo {
@@ -580,4 +594,54 @@ input[type="text"]:focus {
 #container4 {
   border: 5px solid black;
   width: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  top: 0;
+
+  height: 65px;
+
+  padding: 0 3vw;
+  gap: 3vw;
+  z-index: 999;
+}
+
+#header-logo {
+  height: 35px;
+  width: 35px;
+}
+
+#search-bar {
+  display: none;
+  padding: 8px 12px;
+  max-width: 800px;
+}
+
+#search-bar img {
+  width: 20px;
+  height: 20px;
+}
+
+#header-button-wrapper div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--2);
+  height: 35px;
+  width: 35px;
+  border-radius: 5px;
+}
+
+.header-button-wrapper div {
+  display: flex;
+  flex-direction: row;
+}
+
+#header-button-wrapper div img {
+  width: 20px;
+  height: 20px;
 }

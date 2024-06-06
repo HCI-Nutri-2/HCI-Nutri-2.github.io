@@ -1,0 +1,174 @@
+{
+    "menu": [
+        {
+            "category": "Entrees",
+            "items": [
+                {
+                    "name": "Spring Rolls",
+                    "description": "Crispy rolls stuffed with veggies.",
+                    "price": 5.99
+                },
+                {
+                    "name": "Garlic Bread",
+                    "description": "Toasted bread with garlic butter.",
+                    "price": 3.99
+                },
+                {
+                    "name": "Stuffed Mushrooms",
+                    "description": "Mushrooms stuffed with cheese and herbs.",
+                    "price": 7.99
+                }
+            ]
+        },
+        {
+            "category": "Soup & Salads",
+            "items": [
+                {
+                    "name": "Tomato Soup",
+                    "description": "Rich and creamy tomato soup.",
+                    "price": 4.99
+                },
+                {
+                    "name": "Chicken Noodle Soup",
+                    "description": "Hearty chicken noodle soup.",
+                    "price": 6.99
+                },
+                {
+                    "name": "Minestrone",
+                    "description": "Classic Italian vegetable soup.",
+                    "price": 5.99
+                },
+                {
+                    "name": "Caesar Salad",
+                    "description": "Crisp romaine lettuce with Caesar dressing.",
+                    "price": 8.99
+                },
+                {
+                    "name": "Greek Salad",
+                    "description": "Tomatoes, cucumbers, olives, and feta cheese.",
+                    "price": 7.99
+                },
+                {
+                    "name": "House Salad",
+                    "description": "Mixed greens with house vinaigrette.",
+                    "price": 6.99
+                }
+            ]
+        },
+        {
+            "category": "Main",
+            "items": [
+                {
+                    "name": "Grilled Chicken",
+                    "description": "Served with steamed vegetables.",
+                    "price": 12.99
+                },
+                {
+                    "name": "Pasta Primavera",
+                    "description": "Pasta with fresh vegetables.",
+                    "price": 10.99
+                },
+                {
+                    "name": "Beef Stroganoff",
+                    "description": "Tender beef with creamy mushroom sauce.",
+                    "price": 14.99
+                },
+                {
+                    "name": "Fish and Chips",
+                    "description": "Crispy fried fish with fries.",
+                    "price": 13.99
+                },
+                {
+                    "name": "Vegetarian Lasagna",
+                    "description": "Layers of pasta with vegetables and cheese.",
+                    "price": 11.99
+                }
+            ]
+        },
+        {
+            "category": "Desserts",
+            "items": [
+                {
+                    "name": "Cheesecake",
+                    "description": "Creamy cheesecake with a graham cracker crust.",
+                    "price": 6.99
+                },
+                {
+                    "name": "Chocolate Cake",
+                    "description": "Rich chocolate cake with fudge frosting.",
+                    "price": 6.99
+                },
+                {
+                    "name": "Apple Pie",
+                    "description": "Classic apple pie with a flaky crust.",
+                    "price": 5.99
+                },
+                {
+                    "name": "Ice Cream Sundae",
+                    "description": "Vanilla ice cream with chocolate sauce and nuts.",
+                    "price": 4.99
+                }
+            ]
+        },
+        {
+            "category": "Beverages",
+            "items": [
+                {
+                    "name": "Coffee",
+                    "description": "Freshly brewed coffee.",
+                    "price": 2.99
+                },
+                {
+                    "name": "Lemonade",
+                    "description": "Refreshing lemonade.",
+                    "price": 3.49
+                },
+                {
+                    "name": "Iced Tea",
+                    "description": "Chilled tea with lemon.",
+                    "price": 2.99
+                },
+                {
+                    "name": "Soda",
+                    "description": "Choice of cola, diet cola, or lemon-lime.",
+                    "price": 1.99
+                },
+                {
+                    "name": "Mineral Water",
+                    "description": "Sparkling or still mineral water.",
+                    "price": 3.99
+                }
+            ]
+        },
+        {
+            "category": "Specials",
+            "items": [
+                {
+                    "name": "Surf and Turf",
+                    "description": "Grilled steak and lobster tail served with a side of garlic butter.",
+                    "price": 29.99
+                },
+                {
+                    "name": "Truffle Risotto",
+                    "description": "Creamy risotto with truffle oil and parmesan cheese.",
+                    "price": 18.99
+                },
+                {
+                    "name": "Duck à l'Orange",
+                    "description": "Roasted duck breast with an orange glaze.",
+                    "price": 25.99
+                },
+                {
+                    "name": "Ribeye Steak",
+                    "description": "Juicy ribeye steak cooked to perfection, served with mashed potatoes.",
+                    "price": 27.99
+                },
+                {
+                    "name": "Lobster Bisque",
+                    "description": "Rich and creamy lobster soup.",
+                    "price": 15.99
+                }
+            ]
+        }
+    ]
+}

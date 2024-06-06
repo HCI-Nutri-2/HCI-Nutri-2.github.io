@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../global/global.css">
+    <link rel="stylesheet" href="admin.css">
+    <title>Management</title>
+</head>
+<body>
+    <template id="item-template">
+        <div class="container">
+            <div class="container f1">
+                <p class="name mont">NAME</p>
+                <p class="price mont">PRICE</p>
+                <p class="desc mont">DESC</p>
+            </div>
+            <div class="container gap15">
+                <button class="res-button bcol-tsp hov-ul"><p>Edit</p></button>
+                <button class="res-button bcol-tsp hov-ul"><p>Delete</p></button>
+            </div>
+        </div>
+    </template>
+
+    <div id="add-item-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Item</h2>
+            <form id="add-item-form">
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="Appetizers">Entrees</option>
+                    <option value="Soups">Soup & Salads</option>
+                    <option value="Main Courses">Main</option>
+                    <option value="Desserts">Desserts</option>
+                    <option value="Beverages">Beverages</option>
+                    <option value="Specials">Specials</option>
+                </select>
+                <br><br>
+                <label for="name">Item Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br><br>
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required>
+                <br><br>
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" step="0.01" required>
+                <br><br>
+                <button type="submit">Add Item</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="true-wrapper vcontainer">
+
+        <header class="container center sbet bcol3">
+            <img src="../global/assets/imgs/image-placeholder.png" class="logo">
+            <div id="search-bar" class="container center rad5 bcol2 f1">
+                <input type="text" class="res-input bcol-tsp f1">
+                <img src="../global/assets/icons/search.svg">
+            </div>
+            <div id="header-button-wrapper" class="container">
+                <div id="login"><img src="../global/assets/icons/user.png" alt="login"></div>
+                <div id="menu"><img src="../global/assets/icons/user.png" alt="menu"></div>
+                <div id="history"><img src="" alt="history"></div>
+                <div id="account"><img src="../global/assets/icons/user.png" alt="account"></div>
+            </div>
+        </header>
+
+        <main class="container w100 f1">
+            <div class="vcontainer bcol1">
+                <button class="res-button button container bcol4 pad10 gap15 center" onclick="addCat()">
+                    <img src="../global/icons/plus.png" class="img20">
+                    <p class="mont bold ts15">Add Category</p>
+                </button>
+                <div id="nav-container" class="vcontainer bcol1">
+
+                </div>
+            </div>
+            <div class="vcontainer bcol2 pad10 f1">
+                <div class="b-wrapper container sbet down">
+                    <p id="list-title" class="mont ts25"></p>
+                    <div class="container gap15">
+                        <button id="add-item-button" class="res-button bcol-tsp pad5"><img src="../global/icons/plus_white.png" alt=""></button>
+                    </div>
+                </div>
+                <hr>
+                <div id="list-container" class="vcontainer w100 gap15 pad10">
+                </div>
+            </div>
+        </main>
+
+    </div>
+</body>
+<script src="../global/global.js"></script>
+<script src="admin.js"></script>
+</html>

@@ -1,0 +1,44 @@
+#login-form {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-wrapper {
+    width: 800px;
+    max-width: 100vw;
+    height: 450px;
+    overflow: hidden;
+}
+
+.form {
+    width: 300px;
+    padding: 0 0 10px 3vw ;
+}
+
+.form-input-wrapper {
+    height: 270px;
+}
+
+.form-input {
+    gap: 15px;
+}
+
+.form-input input{
+    flex: 1;
+    border-bottom: 1px solid var(--1);
+    color: var(--4);
+    font-size: 15px;
+    font-family: "noir";
+}
+
+.form-input button{
+    flex: 1;
+    border-radius: 5px;
+    background-color: var(--1);
+    padding: 8px 0 3px 0;
+    font-size: 15px;
+    font-family: "noir";
+}

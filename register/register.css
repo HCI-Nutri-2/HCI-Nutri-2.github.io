@@ -8,12 +8,12 @@
 
 @font-face {
     font-family: 'fonseca';
-    src: url(../global/assets/fonts/Fonseca-Regular.otf);
+    src: url(../global/fonts/Fonseca-Regular.otf);
 }
 
 @font-face {
     font-family: 'noir-medium';
-    src: url(../global/assets/fonts/Noir_medium.otf);
+    src: url(../global/fonts/Noir_medium.otf);
 }
 
 #container_right {

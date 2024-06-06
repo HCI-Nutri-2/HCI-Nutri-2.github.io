@@ -93,6 +93,7 @@ function editName() {
   editNameContent.style.display = "none";
   editNameButton.style.display = "none";
   confirmNameButton.style.display = "inline";
+  editNameInput.value = editNameContent.innerHTML;
   editNameInput.focus();
 }
 
@@ -109,6 +110,7 @@ function editEmail() {
   editEmailContent.style.display = "none";
   editEmailButton.style.display = "none";
   confirmEmailButton.style.display = "inline";
+  editEmailInput.value = editNameContent.innerHTML;
   editEmailInput.focus();
 }
 
@@ -125,6 +127,7 @@ function editPhone() {
   editPhoneContent.style.display = "none";
   editPhoneButton.style.display = "none";
   confirmPhoneButton.style.display = "inline";
+  editPhoneInput.value = editPhoneContent.innerHTML;
   editPhoneInput.focus();
 }
 

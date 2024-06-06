@@ -1,443 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../global/g.css">
-  <link rel="stylesheet" href="main-container.css">
-  <title id="title">Menu</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../global/global.css">
+    <link rel="stylesheet" href="menu.css">
+    <title>Menu</title>
 </head>
+<body class="bcol3">
+    <div id="top"></div>
 
-<body>
-  <header>
-    <div class="logo">
-      <img src="../global/assets/icons/rubik.png" alt="">
-    </div>
-    <div id="search-bar">
-      <input type="text" name="search-bar" id="input">
-      <img src="../global/assets/icons/search.svg" alt="search icon">
-    </div>
-    <div class="header-button-wrapper">
-      <div id="login-header-button">
-        <img src="../global/assets/icons/user.png" alt="">
-      </div>
-      <div id="history-header-button">
-        <img src="" alt="">
-      </div>
-      <div id="account-order-button">
-        <img src="../global/assets/icons/user.png" alt="">
-      </div>
-    </div>
-  </header>
+    <header class="container center sbet bcol3">
+        <img src="../global/icons/image-placeholder.png" id="header-logo">
+        <div id="search-bar" class="container center rad5 bcol2 f1">
+            <input type="text" placeholder="Search" class="res-input bcol-tsp f1">
+            <img src="../global/icons/search.svg">
+        </div>
+        <div id="header-button-wrapper" class="container gap15">
+            <div id="login"><img src="../global/icons/user.png" class="button bcol1 col1 f1"></div>
+            <div id="menu"><img src="../global/icons/user.png" ></div>
+            <div id="history"><img src=""></div>
+            <div id="account"><img src="../global/icons/user.png"></div>
+        </div>
+    </header>
 
-  <main>
-    <section id="carousel">
-      <div id="slider">
-        <img id="slide-1" src="../global/assets/imgs/carousel_1.png" alt="1">
-        <img id="slide-2" src="../global/assets/imgs/carousel_2.png" alt="2">
-      </div>
-      <div class="slider-nav">
-        <button id="button-1"></button>
-        <button id="button-2"></button>
-      </div>
+    <section id="login-form" class="container w100 h100 pos-abs none">
+        <div class="form-wrapper container rad10 bcol3">
+
+            <section class="carousel modal-sizing pos-rel">
+                <div class="slider container pos-rel w100 h100">
+                    <img src="../global/icons/image-placeholder.png" class="fit-img">
+                    <img src="../global/icons/image-placeholder.png" class="fit-img">
+                </div>
+                <div class="slider-nav container pos-abs"></div>
+            </section>
+
+            <section id="form-wrapper" class="container down">
+
+                <div id="login" class="form vcontainer gap20 none">
+                    <p class="fonseca-mid ts50 col2">Login</p>
+                    <div class="form-input-wrapper vcontainer sbet w100">
+
+                        <div class="form-input vcontainer">
+                            <!-- inputs -->
+                            <div class="inputs vcontainer gap25">
+                                <input type="text" placeholder="Username" class="res-input bcol-tsp">
+                                <div class="vcontainer gap5">
+                                    <input type="password" placeholder="Password" class="res-input bcol-tsp">
+                                    <p class="button col4 noir ts10 " onclick="toggleStates('reset')">Forgot Password?</p>
+                                </div>
+                            </div>
+                            <!-- buttons -->
+                            <div class="buttons vcontainer gap15">
+                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Sign In</button>
+                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Continue With Google</button>
+                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Continue With Facebook</button>
+                            </div>
+                        </div>
+
+                        <div class="container noir gap15 ts15">
+                            <p class="col4">Don't Have An Account?</p>
+                            <p class="button col1 hov-ul" onclick="toggleStates('regis')">Register</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="reset" class="form vcontainer gap25 none">
+                    <p class="fonseca-mid ts50 col2 lineh50">Reset Password</p>
+                    <div class="form-input-wrapper vcontainer sbet w100">
+
+                        <div id="reset-form1" class="form-input vcontainer none">
+                            <!-- inputs -->
+                            <div class="inputs vcontainer gap25">
+                                <input type="email" placeholder="Email" class="res-input bcol-tsp">
+                            </div>
+                            <!-- buttons -->
+                            <div class="buttons vcontainer gap15">
+                                <button class="res-button button bcol1 col3" onclick="toggleResStates('reset-form2')">Send OTP</button>
+                            </div>
+                        </div>
+
+                        <div id="reset-form2" class="form-input vcontainer none">
+                            <!-- inputs -->
+                            <div class="inputs container gap25 pos-rel">
+                                <input type="text" placeholder="OTP" class="res-input bcol-tsp">
+                                <p class="nowrap noir button col2 pos-abs ts15" style="right: 0;">Resend OTP</p>
+                            </div>
+                            <!-- buttons -->
+                            <div class="buttons vcontainer gap15">
+                                <button class="res-button button bcol1 col3" onclick="toggleResStates('reset-form3')">Confirm OTP</button>
+                            </div>
+                        </div>
+
+                        <div id="reset-form3" class="form-input vcontainer none">
+                            <!-- inputs -->
+                            <div class="inputs vcontainer gap25">
+                                <input type="password" placeholder="New Password" class="res-input bcol-tsp">
+                                <input type="password" placeholder="Re-Type Password" class="res-input bcol-tsp">
+                            </div>
+                            <!-- buttons -->
+                            <div class="buttons vcontainer gap15">
+                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Change Password</button>
+                            </div>
+                        </div>
+
+                        <div class="container noir gap15 ts15">
+                            <p class="col4">Go Back?</p>
+                            <p class="button col1 hov-ul" onclick="toggleStates('login')">Login</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="regis" class="form vcontainer gap20 none">
+                    <p class="fonseca-mid ts50 col2">Register</p>
+                    <div class="form-input-wrapper vcontainer sbet w100">
+
+                        <div class="form-input vcontainer">
+                            <!-- inputs -->
+                            <div class="inputs vcontainer gap25">
+                                <input type="text" placeholder="Username" class="res-input bcol-tsp">
+                                <input type="password" placeholder="Password" class="res-input bcol-tsp">
+                                <input type="email" placeholder="Email" class="res-input bcol-tsp">
+                            </div>
+                            <!-- buttons -->
+                            <div class="buttons vcontainer gap15">
+                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Create New Account</button>
+                            </div>
+                        </div>
+
+                        <div class="container noir gap15 ts15">
+                            <p class="col4">Already Have An Account?</p>
+                            <p class="button col1 hov-ul" onclick="toggleStates('login')">Login</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
     </section>
 
-    <section id="main-container">
-      <div id="menu-wrapper">
-        <div id="nav-wrapper">
-          <div id="menu-nav">
-            <button id="entrees">
-              <p>Entrees</p>
-            </button>
-            <button id="entrees">
-              <p>Salads</p>
-            </button>
-            <button id="entrees">
-              <p>Soups</p>
-            </button>
-            <button id="entrees">
-              <p>Dessert</p>
-            </button>
-            <button id="entrees">
-              <p>Beverages</p>
-            </button>
-            <button id="entrees">
-              <p>Specials</p>
-            </button>
-          </div>
-          <hr>
-        </div>
-        <div class="menu-section">
-          <p class="subsection-name">Sub Category Name</p>
-          <div class="item-scroll-wrapper">
-            <div class="menu-item-wrapper">
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
+    <main>
+        <section class="carousel page-sizing pos-rel w100">
+            <div class="slider container pos-rel w100 h100">
+                <img src="../global/imgs/carousel_1.png" class="fit-img" alt="1">
+                <img src="../global/imgs/carousel_2.png" class="fit-img" alt="2">
             </div>
-          </div>
-        </div>
-        <div class="menu-section">
-          <p class="subsection-name">Sub Category Name</p>
-          <div class="item-scroll-wrapper">
-            <div class="menu-item-wrapper">
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
+            <div class="slider-nav container pos-abs ">
             </div>
-          </div>
-        </div>
-        <div class="menu-section">
-          <p class="subsection-name">Sub Category Name</p>
-          <div class="item-scroll-wrapper">
-            <div class="menu-item-wrapper">
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
+        </section>
+        <section id="main-container" class="container w100">
+            <div class="menu-wrapper vcontainer f1">
+                <div class="menu-nav container seve">
+                    <button id="Entrees"><p>Entrees</p></button>
+                    <button id="Salads"><p>Salads</p></button>
+                    <button id="Soups"><p>Soups</p></button>
+                    <button id="Dessert"><p>Dessert</p></button>
+                    <button id="Beverages"><p>Beverages</p></button>
+                    <button id="Specials"><p>Specials</p></button>
                 </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
+                <div class="menu-section vcontainer w100 pos-rel bcol2 rad5">
+                    <div class="subcat-wrapper vcontainer">
+                        <p class="subcat-name noir">Sub Category Name</p>
+                        <div class="item-wrapper container">
+                            <div class="menu-item pos-rel" onclick="menuClick()">
+                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Dish Name</p>
+                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="menu-item pos-rel" onclick="menuClick()">
+                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Dish Name</p>
+                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="menu-item pos-rel" onclick="menuClick()">
+                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Dish Name</p>
+                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="menu-item pos-rel" onclick="menuClick()">
+                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Dish Name</p>
+                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcat-wrapper vcontainer">
+                        <p class="subcat-name noir">Sub Category Name</p>
+                        <div class="item-wrapper container res-scroll">
+                            <div class="menu-item pos-rel" onclick="menuClick()">
+                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Dish Name</p>
+                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="menu-item pos-rel" onclick="menuClick()">
+                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Dish Name</p>
+                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="menu-item pos-rel" onclick="menuClick()">
+                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Dish Name</p>
+                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="menu-item pos-rel" onclick="menuClick()">
+                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Dish Name</p>
+                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="menu-item pos-rel" onclick="menuClick()">
+                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Dish Name</p>
+                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcat-wrapper vcontainer">
+                        <p class="subcat-name noir">Sub Category Name</p>
+                        <div class="item-wrapper container res-scroll">
+                            <div class="menu-item pos-rel" onclick="menuClick()">
+                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Dish Name</p>
+                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="menu-item pos-rel" onclick="menuClick()">
+                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Dish Name</p>
+                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="menu-item pos-rel" onclick="menuClick()">
+                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Dish Name</p>
+                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="menu-item pos-rel" onclick="menuClick()">
+                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Dish Name</p>
+                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-        <div class="menu-section">
-          <p class="subsection-name">Sub Category Name</p>
-          <div class="item-scroll-wrapper">
-            <div class="menu-item-wrapper">
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
+            <div class="cart-wrapper">
+                <div id="cart" class="vcontainer">
+                    <div class="container w100 sbet down">
+                        <p id="cart-text" class="moorley col2">Cart</p>
+                        <p id="total" class="noir col1">total</p>
+                    </div>
+                    <div id="cart-item-wrapper" class="vcontainer f1 rad5">
+                        <!--cart item-->
+                        <div class="cart-item container sbet w100 pad5">
+                            <div class="vcontainer">
+                            </div>
+                            <div class="vcontainer">
+                                <p class="price"></p>
+                                <button class="res-button"><img src="" alt=""></button> <!--open modal-->
+                                <button class="res-button"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-button-wrapper container w100 sbet gap15">
+                        <button id="up-button" class="res-button pad5b rad5 bcol4" onclick="scrollToE('top', 0)">
+                            <svg viewBox="0 0 200 200" class="img25" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                                <polygon points="100,20 190,173.205 10,173.205" fill="#0D5D56"/>
+                            </svg> 
+                        </button>
+                        <button id="checkout-button" class="res-button f1 bcol1 rad5" onclick="navigateToPage('../cart & payment/cartpayment.html')">
+                            <p class="noir ts25">checkout</p>
+                        </button>
+                    </div>
                 </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-        <div class="menu-section">
-          <p class="subsection-name">Sub Category Name</p>
-          <div class="item-scroll-wrapper">
-            <div class="menu-item-wrapper">
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="menu-section">
-          <p class="subsection-name">Sub Category Name</p>
-          <div class="item-scroll-wrapper">
-            <div class="menu-item-wrapper">
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-              <div class="menu-item" onclick="menuClick()">
-                <img class="item-pic" src="../global/assets/imgs/image-placeholder.png" alt="">
-                <div class="item-overlay">
-                  <p class="item-name">Dish Name</p>
-                  <p class="item-desc">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="cart-wrapper">
-        <div id="cart">
-          <div id="cart-top">
-            <p id="cart-text">Cart</p>
-            <p id="total">total</p>
-          </div>
-          <div id="cart-item-wrapper">
-            <!--cart item-->
-            <div class="cart-item">
+        </section>
 
-            </div>
-          </div>
-          <div class="cart-button-wrapper">
-            <button id="up-button">
-              <img src="../global/assets/icons/up.png" alt="">
-            </button>
-            <button id="checkout-button">
-              <p>checkout</p>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div>
-
-    </div>
-  </footer>
-
+    </main>
 </body>
-<script src="../global/g.js"></script>
+<script src="../global/global.js"></script>
 <script src="menu.js"></script>
-
 </html>

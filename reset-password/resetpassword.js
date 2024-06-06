@@ -4,12 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var currentIndex = 0;
     var totalSlides = slider.children.length;
     var slideWidth = slider.offsetWidth;
-
-    var wait = 3000
+    var wait = 3000;
 
     function moveToSlide(change) {
         currentIndex += change;
-        slideWidth = slider.offsetWidth
+        slideWidth = slider.offsetWidth;
         var translation = currentIndex * slideWidth;
         slider.style.transition = "transform 0.5s ease-in-out";
         slider.style.transform = `translateX(-${translation}px)`;
@@ -31,20 +30,20 @@ document.addEventListener('DOMContentLoaded', function () {
     var autoSlideInterval = setInterval(function() { 
         if (currentIndex === totalSlides - 1) {
             moveToSlide(-currentIndex);
-        }else {
+        } else {
             moveToSlide(1);
         }
     }, wait);
 
-    slider, buttons.addEventListener('mouseenter', function () {
+    slider.addEventListener('mouseenter', function () {
         clearInterval(autoSlideInterval);
     });
 
-    slider, buttons.addEventListener('mouseleave', function () {
+    slider.addEventListener('mouseleave', function () {
         autoSlideInterval = setInterval(function() {
             if (currentIndex === totalSlides - 1) {
                 moveToSlide(-currentIndex);
-            }else {
+            } else {
                 moveToSlide(1);
             }
         }, wait);
@@ -52,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.getElementById('sendOtpBtn').addEventListener('click', function() {
-    // Hide the "Go back? Login" button
     document.querySelector('.goback').style.display = 'none';
 
     if (!document.getElementById('otpInput')) {
@@ -73,7 +71,6 @@ document.getElementById('sendOtpBtn').addEventListener('click', function() {
         resendOtpButton.innerHTML = 'Resend OTP';
         otpContainer.appendChild(resendOtpButton);
 
-        // Add event listeners to toggle label visibility for OTP input
         var otpInput = otpInputDiv.querySelector('input');
         otpInput.addEventListener('focus', function() {
             otpInputDiv.querySelector('label').style.visibility = 'hidden';
@@ -84,19 +81,15 @@ document.getElementById('sendOtpBtn').addEventListener('click', function() {
             }
         });
 
-        // Add event listener to OTP input to show the "Change Password" button
         otpInput.addEventListener('input', function() {
-            // Check if the "Change OTP" button already exists
-            if (!document.getElementById('changePasswordBtn')) {
-                var changePasswordButton = document.createElement('button');
-                changePasswordButton.id = 'changePasswordBtn';
-                changePasswordButton.type = 'button';
-                changePasswordButton.innerHTML = 'Change OTP';
-                document.getElementById('otpSection').appendChild(changePasswordButton);
+            if (!document.getElementById('confirmotpBtn')) {
+                var confirmotpButton = document.createElement('button');
+                confirmotpButton.id = 'confirmotpBtn';
+                confirmotpButton.type = 'button';
+                confirmotpButton.innerHTML = 'Confirm OTP';
+                document.getElementById('otpSection').appendChild(confirmotpButton);
 
-                // Add event listener to the "Change OTP" button
-                changePasswordButton.addEventListener('click', function() {
-                    // Show the password labels
+                confirmotpButton.addEventListener('click', function() {
                     var newPasswordDiv = document.createElement('div');
                     newPasswordDiv.className = 'inputbox';
                     newPasswordDiv.innerHTML = `
@@ -113,7 +106,6 @@ document.getElementById('sendOtpBtn').addEventListener('click', function() {
                     `;
                     document.getElementById('otpSection').appendChild(retypePasswordDiv);
 
-                    // Add event listeners for new password input fields
                     var newPasswordInput = newPasswordDiv.querySelector('input');
                     newPasswordInput.addEventListener('focus', function() {
                         this.parentElement.querySelector('label').style.visibility = 'hidden';
@@ -134,14 +126,17 @@ document.getElementById('sendOtpBtn').addEventListener('click', function() {
                         }
                     });
 
-                    // Add event listener to show the second "Change Password" button
                     document.getElementById('retypePasswordInput').addEventListener('input', function() {
-                        if (!document.getElementById('changePasswordBtn2')) {
-                            var changePasswordButton2 = document.createElement('button');
-                            changePasswordButton2.id = 'changePasswordBtn2';
-                            changePasswordButton2.type = 'button';
-                            changePasswordButton2.innerHTML = 'Change Password';
-                            document.getElementById('otpSection').appendChild(changePasswordButton2);
+                        if (!document.getElementById('changePasswordBtn')) {
+                            var changePasswordButton = document.createElement('button');
+                            changePasswordButton.id = 'changePasswordBtn';
+                            changePasswordButton.type = 'button';
+                            changePasswordButton.innerHTML = 'Change Password';
+                            document.getElementById('otpSection').appendChild(changePasswordButton);
+
+                            changePasswordButton.addEventListener('click', function() {
+                                window.location.href = '../login/login.html';
+                            });
                         }
                     });
                 });
@@ -152,7 +147,6 @@ document.getElementById('sendOtpBtn').addEventListener('click', function() {
     }
 });
 
-// Add event listeners for other input fields
 document.getElementById('email').addEventListener('focus', function() {
     this.parentElement.querySelector('label').style.visibility = 'hidden';
 });
