@@ -7,37 +7,22 @@
     <link rel="stylesheet" href="menu.css">
     <title>Menu</title>
 </head>
-<body class="bcol3">
+<body id="menu" class="bcol3">
     <div id="top"></div>
-
-    <header class="container center sbet bcol3">
-        <img src="../global/icons/image-placeholder.png" id="header-logo">
-        <div id="search-bar" class="container center rad5 bcol2 f1">
-            <input type="text" placeholder="Search" class="res-input bcol-tsp f1">
-            <img src="../global/icons/search.svg">
-        </div>
-        <div id="header-button-wrapper" class="container gap15">
-            <div id="login"><img src="../global/icons/user.png" class="button bcol1 col1 f1"></div>
-            <div id="menu"><img src="../global/icons/user.png" ></div>
-            <div id="history"><img src=""></div>
-            <div id="account"><img src="../global/icons/user.png"></div>
-        </div>
-    </header>
-
-    <section id="login-form" class="container w100 h100 pos-abs none">
+    <section id="login-form" class="container center jcenter">
         <div class="form-wrapper container rad10 bcol3">
 
             <section class="carousel modal-sizing pos-rel">
                 <div class="slider container pos-rel w100 h100">
-                    <img src="../global/icons/image-placeholder.png" class="fit-img">
-                    <img src="../global/icons/image-placeholder.png" class="fit-img">
+                    <img src="../global/icons/babiPanggang.jpg" class="fit-img">
+                    <img src="../global/icons/babiPanggang.jpg" class="fit-img">
                 </div>
                 <div class="slider-nav container pos-abs"></div>
             </section>
 
-            <section id="form-wrapper" class="container down">
+            <section class="container down">
 
-                <div id="login" class="form vcontainer gap20 none">
+                <div id="login" class="form vcontainer gap20">
                     <p class="fonseca-mid ts50 col2">Login</p>
                     <div class="form-input-wrapper vcontainer sbet w100">
 
@@ -61,6 +46,30 @@
                         <div class="container noir gap15 ts15">
                             <p class="col4">Don't Have An Account?</p>
                             <p class="button col1 hov-ul" onclick="toggleStates('regis')">Register</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="regis" class="form vcontainer gap20 none">
+                    <p class="fonseca-mid ts50 col2">Register</p>
+                    <div class="form-input-wrapper vcontainer sbet w100">
+
+                        <div class="form-input vcontainer">
+                            <!-- inputs -->
+                            <div class="inputs vcontainer gap25">
+                                <input type="text" placeholder="Username" class="res-input bcol-tsp">
+                                <input type="password" placeholder="Password" class="res-input bcol-tsp">
+                                <input type="email" placeholder="Email" class="res-input bcol-tsp">
+                            </div>
+                            <!-- buttons -->
+                            <div class="buttons vcontainer gap15">
+                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Create New Account</button>
+                            </div>
+                        </div>
+
+                        <div class="container noir gap15 ts15">
+                            <p class="col4">Already Have An Account?</p>
+                            <p class="button col1 hov-ul" onclick="toggleStates('login')">Login</p>
                         </div>
                     </div>
                 </div>
@@ -111,34 +120,19 @@
                     </div>
                 </div>
 
-                <div id="regis" class="form vcontainer gap20 none">
-                    <p class="fonseca-mid ts50 col2">Register</p>
-                    <div class="form-input-wrapper vcontainer sbet w100">
-
-                        <div class="form-input vcontainer">
-                            <!-- inputs -->
-                            <div class="inputs vcontainer gap25">
-                                <input type="text" placeholder="Username" class="res-input bcol-tsp">
-                                <input type="password" placeholder="Password" class="res-input bcol-tsp">
-                                <input type="email" placeholder="Email" class="res-input bcol-tsp">
-                            </div>
-                            <!-- buttons -->
-                            <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Create New Account</button>
-                            </div>
-                        </div>
-
-                        <div class="container noir gap15 ts15">
-                            <p class="col4">Already Have An Account?</p>
-                            <p class="button col1 hov-ul" onclick="toggleStates('login')">Login</p>
-                        </div>
-                    </div>
-                </div>
-
             </section>
-
         </div>
     </section>
+    <section id="addons-form" class="container center jcenter w100 h100 none"></section>
+
+    <header class="container center sbet bcol3">
+        <img src="../global/icons/rubik.png" id="header-logo">
+        <div id="search-bar" class="container center rad5 bcol2 f1">
+            <input type="text" class="res-input bcol-tsp f1 mont ts15" placeholder="Search">
+            <img src="../global/icons/search.svg">
+        </div>
+        <div id="header-button-wrapper" class="container gap15"></div>
+    </header>
 
     <main>
         <section class="carousel page-sizing pos-rel w100">
@@ -161,107 +155,107 @@
                 </div>
                 <div class="menu-section vcontainer w100 pos-rel bcol2 rad5">
                     <div class="subcat-wrapper vcontainer">
-                        <p class="subcat-name noir">Sub Category Name</p>
+                        <p class="subcat-name noir">Makanan Protein Tinggi</p>
                         <div class="item-wrapper container">
-                            <div class="menu-item pos-rel" onclick="menuClick()">
-                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                            <div class="menu-item pos-rel" onclick="menuClick(this)">
+                                <img class="w100 ar1 rad5" src="../global/icons/babiPanggang.jpg" alt="">
                                 <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Dish Name</p>
-                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                    <p class="item-name fonsecab">Daging olahan </p>
+                                    <p class="item-desc noir pos-abs">Digoreng pakai minyak zaitun</p>
                                 </div>
                             </div>
-                            <div class="menu-item pos-rel" onclick="menuClick()">
-                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                            <div class="menu-item pos-rel" onclick="menuClick(this)">
+                                <img class="w100 ar1 rad5" src="../global/icons/roastedPork.jpg" alt="">
                                 <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Dish Name</p>
-                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                    <p class="item-name fonsecab">Babi guling</p>
+                                    <p class="item-desc noir pos-abs">Berkhasiat</p>
                                 </div>
                             </div>
-                            <div class="menu-item pos-rel" onclick="menuClick()">
-                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                            <div class="menu-item pos-rel" onclick="menuClick(this)">
+                                <img class="w100 ar1 rad5" src="../global/icons/pork.jpg" alt="">
                                 <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Dish Name</p>
-                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                    <p class="item-name fonsecab">Dada Ayam</p>
+                                    <p class="item-desc noir pos-abs">Filet dada ayam</p>
                                 </div>
                             </div>
-                            <div class="menu-item pos-rel" onclick="menuClick()">
-                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                            <div class="menu-item pos-rel" onclick="menuClick(this)">
+                                <img class="w100 ar1 rad5" src="../global/icons/telorCeplok.jpg" alt="">
                                 <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Dish Name</p>
-                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="subcat-wrapper vcontainer">
-                        <p class="subcat-name noir">Sub Category Name</p>
-                        <div class="item-wrapper container res-scroll">
-                            <div class="menu-item pos-rel" onclick="menuClick()">
-                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Dish Name</p>
-                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
-                                </div>
-                            </div>
-                            <div class="menu-item pos-rel" onclick="menuClick()">
-                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Dish Name</p>
-                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
-                                </div>
-                            </div>
-                            <div class="menu-item pos-rel" onclick="menuClick()">
-                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Dish Name</p>
-                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
-                                </div>
-                            </div>
-                            <div class="menu-item pos-rel" onclick="menuClick()">
-                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Dish Name</p>
-                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
-                                </div>
-                            </div>
-                            <div class="menu-item pos-rel" onclick="menuClick()">
-                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Dish Name</p>
-                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                    <p class="item-name fonsecab">Tempe Bacem</p>
+                                    <p class="item-desc noir pos-abs">Berkarbohidrat dan berprotein</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="subcat-wrapper vcontainer">
-                        <p class="subcat-name noir">Sub Category Name</p>
+                        <p class="subcat-name noir">Sayur dan Protein</p>
                         <div class="item-wrapper container res-scroll">
-                            <div class="menu-item pos-rel" onclick="menuClick()">
-                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                            <div class="menu-item pos-rel" onclick="menuClick(this)">
+                                <img class="w100 ar1 rad5" src="../global/icons/boncis.jpg" alt="">
                                 <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Dish Name</p>
-                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                    <p class="item-name fonsecab">Sawi telur</p>
+                                    <p class="item-desc noir pos-abs">ongseng sawi dan telur bebek</p>
                                 </div>
                             </div>
-                            <div class="menu-item pos-rel" onclick="menuClick()">
-                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                            <div class="menu-item pos-rel" onclick="menuClick(this)">
+                                <img class="w100 ar1 rad5" src="../global/icons/adeptusTemptation.jpg" alt="">
                                 <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Dish Name</p>
-                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                    <p class="item-name fonsecab">Cah Jamur</p>
+                                    <p class="item-desc noir pos-abs">Jamur direbus dengan kaldu</p>
                                 </div>
                             </div>
-                            <div class="menu-item pos-rel" onclick="menuClick()">
-                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                            <div class="menu-item pos-rel" onclick="menuClick(this)">
+                                <img class="w100 ar1 rad5" src="../global/icons/telorDaging.jpg" alt="">
                                 <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Dish Name</p>
-                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                    <p class="item-name fonsecab">Ayam saus tiram</p>
+                                    <p class="item-desc noir pos-abs">ayam rebus dengan bumbu tiram</p>
                                 </div>
                             </div>
-                            <div class="menu-item pos-rel" onclick="menuClick()">
-                                <img class="w100 ar1 rad5" src="../global/icons/image-placeholder.png" alt="">
+                            <div class="menu-item pos-rel" onclick="menuClick(this)">
+                                <img class="w100 ar1 rad5" src="../global/icons/baso.jpg" alt="">
                                 <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Dish Name</p>
-                                    <p class="item-desc noir pos-abs">Lorem ipsum dolor sit amet.</p>
+                                    <p class="item-name fonsecab">Bakso Rebus</p>
+                                    <p class="item-desc noir pos-abs">daging diolah dengan bahan segar</p>
+                                </div>
+                            </div>
+                            <div class="menu-item pos-rel" onclick="menuClick(this)">
+                                <img class="w100 ar1 rad5" src="../global/icons/bayem.jpg" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Bayem</p>
+                                    <p class="item-desc noir pos-abs">Sayur bayem rebus</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcat-wrapper vcontainer">
+                        <p class="subcat-name noir">Sayur-mayur</p>
+                        <div class="item-wrapper container res-scroll">
+                            <div class="menu-item pos-rel" onclick="menuClick(this)">
+                                <img class="w100 ar1 rad5" src="../global/icons/capcay.jpg" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Cap-cay</p>
+                                    <p class="item-desc noir pos-abs">irisan cah sayur-sayuran</p>
+                                </div>
+                            </div>
+                            <div class="menu-item pos-rel" onclick="menuClick(this)">
+                                <img class="w100 ar1 rad5" src="../global/icons/oyong.jpg" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">oyong</p>
+                                    <p class="item-desc noir pos-abs">oyong rebus berserta kaldu</p>
+                                </div>
+                            </div>
+                            <div class="menu-item pos-rel" onclick="menuClick(this)">
+                                <img class="w100 ar1 rad5" src="../global/icons/bonciskuah.jpg" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">pokcay</p>
+                                    <p class="item-desc noir pos-abs">sayuran berkhasiat tinggi</p>
+                                </div>
+                            </div>
+                            <div class="menu-item pos-rel" onclick="menuClick(this)">
+                                <img class="w100 ar1 rad5" src="../global/icons/tofu.jpg" alt="">
+                                <div class="item-overlay pos-abs pad5a">
+                                    <p class="item-name fonsecab">Tahu telur</p>
+                                    <p class="item-desc noir pos-abs">isinya berbagai macam sayur</p>
                                 </div>
                             </div>
                         </div>
@@ -292,7 +286,7 @@
                                 <polygon points="100,20 190,173.205 10,173.205" fill="#0D5D56"/>
                             </svg> 
                         </button>
-                        <button id="checkout-button" class="res-button f1 bcol1 rad5" onclick="navigateToPage('../cart & payment/cartpayment.html')">
+                        <button id="checkout-button" onclick="navToPage('../cart & payment/cartpayment.html')" class="res-button f1 bcol1 rad5">
                             <p class="noir ts25">checkout</p>
                         </button>
                     </div>
