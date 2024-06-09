@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="admin.css">
     <title>Management</title>
 </head>
-<body>
+<body id="settings">
     <template id="item-template">
         <div class="vcontainer gap15">
             <div class="item container w100 sbet">
@@ -24,121 +24,6 @@
             <hr>
         </div>
     </template>
-
-    <section id="login-form" class="container center jcenter">
-        <div class="form-wrapper container rad10 bcol3">
-
-            <section class="carousel modal-sizing pos-rel">
-                <div class="slider container pos-rel w100 h100">
-                    <img src="../global/icons/image-placeholder.png" class="fit-img">
-                    <img src="../global/icons/image-placeholder.png" class="fit-img">
-                </div>
-                <div class="slider-nav container pos-abs"></div>
-            </section>
-
-            <section class="container down">
-
-                <div id="login" class="form vcontainer gap20">
-                    <p class="fonseca-mid ts50 col2">Login</p>
-                    <div class="form-input-wrapper vcontainer sbet w100">
-
-                        <div class="form-input vcontainer">
-                            <!-- inputs -->
-                            <div class="inputs vcontainer gap25">
-                                <input type="text" placeholder="Username" class="res-input bcol-tsp">
-                                <div class="vcontainer gap5">
-                                    <input type="password" placeholder="Password" class="res-input bcol-tsp">
-                                    <p class="button col4 noir ts10 " onclick="toggleStates('reset')">Forgot Password?</p>
-                                </div>
-                            </div>
-                            <!-- buttons -->
-                            <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Sign In</button>
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Continue With Google</button>
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Continue With Facebook</button>
-                            </div>
-                        </div>
-
-                        <div class="container noir gap15 ts15">
-                            <p class="col4">Don't Have An Account?</p>
-                            <p class="button col1 hov-ul" onclick="toggleStates('regis')">Register</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="regis" class="form vcontainer gap20 none">
-                    <p class="fonseca-mid ts50 col2">Register</p>
-                    <div class="form-input-wrapper vcontainer sbet w100">
-
-                        <div class="form-input vcontainer">
-                            <!-- inputs -->
-                            <div class="inputs vcontainer gap25">
-                                <input type="text" placeholder="Username" class="res-input bcol-tsp">
-                                <input type="password" placeholder="Password" class="res-input bcol-tsp">
-                                <input type="email" placeholder="Email" class="res-input bcol-tsp">
-                            </div>
-                            <!-- buttons -->
-                            <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Create New Account</button>
-                            </div>
-                        </div>
-
-                        <div class="container noir gap15 ts15">
-                            <p class="col4">Already Have An Account?</p>
-                            <p class="button col1 hov-ul" onclick="toggleStates('login')">Login</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="reset" class="form vcontainer gap25 none">
-                    <p class="fonseca-mid ts50 col2 lineh50">Reset Password</p>
-                    <div class="form-input-wrapper vcontainer sbet w100">
-
-                        <div id="reset-form1" class="form-input vcontainer none">
-                            <!-- inputs -->
-                            <div class="inputs vcontainer gap25">
-                                <input type="email" placeholder="Email" class="res-input bcol-tsp">
-                            </div>
-                            <!-- buttons -->
-                            <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3" onclick="toggleResStates('reset-form2')">Send OTP</button>
-                            </div>
-                        </div>
-
-                        <div id="reset-form2" class="form-input vcontainer none">
-                            <!-- inputs -->
-                            <div class="inputs container gap25 pos-rel">
-                                <input type="text" placeholder="OTP" class="res-input bcol-tsp">
-                                <p class="nowrap noir button col2 pos-abs ts15" style="right: 0;">Resend OTP</p>
-                            </div>
-                            <!-- buttons -->
-                            <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3" onclick="toggleResStates('reset-form3')">Confirm OTP</button>
-                            </div>
-                        </div>
-
-                        <div id="reset-form3" class="form-input vcontainer none">
-                            <!-- inputs -->
-                            <div class="inputs vcontainer gap25">
-                                <input type="password" placeholder="New Password" class="res-input bcol-tsp">
-                                <input type="password" placeholder="Re-Type Password" class="res-input bcol-tsp">
-                            </div>
-                            <!-- buttons -->
-                            <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Change Password</button>
-                            </div>
-                        </div>
-
-                        <div class="container noir gap15 ts15">
-                            <p class="col4">Go Back?</p>
-                            <p class="button col1 hov-ul" onclick="toggleStates('login')">Login</p>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-        </div>
-    </section>
 
     <div id="add-item-modal" class="modal">
         <div class="modal-content">
@@ -171,14 +56,7 @@
 
     <div class="true-wrapper vcontainer">
 
-        <header class="container center sbet bcol3 w100">
-            <img src="../global/icons/rubik.png" id="header-logo">
-            <div id="search-bar" class="container center rad5 bcol2 f1">
-                <input type="text" class="res-input bcol-tsp f1 mont ts15" placeholder="Search">
-                <img src="../global/icons/search.svg">
-            </div>
-            <div id="header-button-wrapper" class="container gap15"></div>
-        </header>
+        <header class="container pos-stk center sbet bcol3"></header>
 
         <main class="container w100 f1">
             <div class="vcontainer bcol1">
@@ -194,7 +72,7 @@
                 <div class="b-wrapper container sbet down">
                     <p id="list-title" class="mont ts25"></p>
                     <div class="container gap15">
-                        <button id="add-item-button" class="res-button bcol-tsp pad5"><img src="../global/icons/plus_white.png" alt=""></button>
+                        <button id="add-item-button" class="res-button bcol-tsp pad5"><img src="../global/icons/plus.png" alt=""></button>
                     </div>
                 </div>
                 <hr>

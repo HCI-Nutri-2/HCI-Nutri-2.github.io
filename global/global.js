@@ -1,3 +1,19 @@
+// Global DOMConLoaded
+document.addEventListener('DOMContentLoaded', function () {
+    tryRun(loadHeader);
+    tryRun(CarouselModule.init);
+    tryRun(loadAddons);
+});
+
+const imgsPath = '../global/imgs/'
+const iconsPath = '../global/icons/'
+const fontsPath = '../global/fonts/'
+const dataPath = '../global/data/'
+
+const header = document.querySelector('header')
+const main = document.querySelector('main')
+const footer = document.querySelector('footer')
+
 // scroll to element
 function scrollToE (element, offset) {
     var thing = document.getElementById(element);
@@ -7,29 +23,42 @@ function scrollToE (element, offset) {
 }
 
 // header logic
-
 function loadHeader () {
-    const menu = `<div id="menu" onclick="navToPage('../index.html')"><img src="../global/icons/user.png"></div>`;
-    const history = `<div id="history" onclick="navToPage('../history/history.html')"><img src=""></div>`;
-    const account = `<div id="account" onclick="navToPage('../profile/profile.html')"><img src="../global/icons/user.png"></div>`;
-    const container = document.getElementById('header-button-wrapper')
+    const fill = `  <img src="../global/icons/rubik.png" class="img35">
+                    <div class="search-bar container center rad5 bcol2 f1">
+                        <input type="text" placeholder="Search" class="res-input bcol-tsp f1 mont ts15">
+                        <img src="../global/icons/search.svg">
+                    </div>
+                    <div class="button-wrapper container gap15"></div>`
+    header.innerHTML = fill
+    const wrapper = header.querySelector('.button-wrapper')
+    let isLoggedIn = localStoreGet("isLoggedIn")
+    let isAdmin = localStoreGet("isAdmin")
+    const curr = currPageName()
 
-    const isLoggedIn = localStoreGet("isLoggedIn") === "true";
-    const currentPage = currPageName();
-    container.innerHTML = '';
+    const menu = `<div class="res-button button bcol2 rad5" onclick="navTo('../index.html')"><img src="../global/icons/home.png"></div>`
+    const history = `<div class="res-button button bcol2 rad5" onclick="navTo('../history/history.html')"><img src="../global/icons/history.png"></div>`
+    const user = `<div class="res-button button bcol2 rad5" onclick="navTo('../profile/profile.html')"><img src="../global/icons/user.png"></div>`
+    const admin = `<div class="res-button button bcol2 rad5" onclick="navTo('../admin/admin.html')"><img src="../global/icons/settings.png"></div>`
+    wrapper.innerHTML = ''
 
     if (isLoggedIn) {
-        if (currentPage === "history") {
-            container.innerHTML += menu + account;
-        } else if (currentPage === 'menu') {
-            container.innerHTML += history + account;
-        } else if (currentPage === 'account') {
-            container.innerHTML += menu + history;
-        } else {
-            container.innerHTML += menu + history + account;
+        if (isAdmin) {
+            wrapper.innerHTML += admin
         }
-    } else {
-        container.innerHTML = `<button class="res-button button bcol1 col3 pad10 rad5 mont bold" onclick="toggleLogin(true)">Login / Sign Up</button>`;
+        if (curr === "menu") {
+            wrapper.innerHTML += history + user + admin
+        } else if (curr === "history") {
+            wrapper.innerHTML += menu + user + admin
+        } else if (curr === "user") {
+            wrapper.innerHTML += menu + history + admin
+        } else if (curr === "settings") {
+            wrapper.innerHTML += menu + history + user
+        } else {
+            wrapper.innerHTML += menu + history + user + admin
+        }
+    }else {
+        wrapper.innerHTML = `<button class="res-button button bcol1 col3 pad10 rad5 mont bold" onclick="toggleLogin(true)">Login / Sign Up</button>`
     }
 }
 
@@ -46,7 +75,7 @@ function loadHeader () {
         if (event.target == modal) {
             toggleLogin();
         }
-    }   
+    }
 
     function toggleStates (show) {
         document.getElementById('login').classList.add('none');
@@ -216,14 +245,6 @@ function currPageName () {
     return document.body.id;
 }
 
-function navToPage (location) {
+function navTo (location) {
     window.location.href = location;
 }
-
-// Global DOMConLoaded
-document.addEventListener('DOMContentLoaded', function () {
-    var isLoggedIn =  localStoreGet("isLoggedIn")
-    tryRun(CarouselModule.init);
-    tryRun(loadHeader);
-    tryRun(loadAddons);
-});
