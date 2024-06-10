@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="menu.css">
     <title>Menu</title>
 </head>
+
 <body id="menu" class="bcol3">
     <div id="top"></div>
     <section id="login-form" class="container center jcenter">
@@ -32,14 +34,18 @@
                                 <input type="text" placeholder="Username" class="res-input bcol-tsp">
                                 <div class="vcontainer gap5">
                                     <input type="password" placeholder="Password" class="res-input bcol-tsp">
-                                    <p class="button col4 noir ts10 " onclick="toggleStates('reset')">Forgot Password?</p>
+                                    <p class="button col4 noir ts10 " onclick="toggleStates('reset')">Forgot Password?
+                                    </p>
                                 </div>
                             </div>
                             <!-- buttons -->
                             <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Sign In</button>
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Continue With Google</button>
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Continue With Facebook</button>
+                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Sign
+                                    In</button>
+                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Continue With
+                                    Google</button>
+                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Continue With
+                                    Facebook</button>
                             </div>
                         </div>
 
@@ -63,14 +69,15 @@
                             </div>
                             <!-- buttons -->
                             <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Create New Account</button>
+                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Create New
+                                    Account</button>
                             </div>
                         </div>
 
                         <div class="container noir gap15 ts15">
                             <p class="col4">Already Have An Account?</p>
                             <p class="button col1 hov-ul" onclick="toggleStates('login')">Login</p>
-                        </div>
+                        </div>c
                     </div>
                 </div>
 
@@ -85,7 +92,8 @@
                             </div>
                             <!-- buttons -->
                             <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3" onclick="toggleResStates('reset-form2')">Send OTP</button>
+                                <button class="res-button button bcol1 col3"
+                                    onclick="toggleResStates('reset-form2')">Send OTP</button>
                             </div>
                         </div>
 
@@ -97,7 +105,8 @@
                             </div>
                             <!-- buttons -->
                             <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3" onclick="toggleResStates('reset-form3')">Confirm OTP</button>
+                                <button class="res-button button bcol1 col3"
+                                    onclick="toggleResStates('reset-form3')">Confirm OTP</button>
                             </div>
                         </div>
 
@@ -109,7 +118,8 @@
                             </div>
                             <!-- buttons -->
                             <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Change Password</button>
+                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Change
+                                    Password</button>
                             </div>
                         </div>
 
@@ -139,12 +149,24 @@
         <section id="main-container" class="container w100">
             <div class="menu-wrapper vcontainer f1">
                 <div class="menu-nav container seve">
-                    <button id="Entrees"><p>Entrees</p></button>
-                    <button id="Salads"><p>Salads</p></button>
-                    <button id="Soups"><p>Soups</p></button>
-                    <button id="Dessert"><p>Dessert</p></button>
-                    <button id="Beverages"><p>Beverages</p></button>
-                    <button id="Specials"><p>Specials</p></button>
+                    <button id="Entrees">
+                        <p>Entrees</p>
+                    </button>
+                    <button id="Salads">
+                        <p>Salads</p>
+                    </button>
+                    <button id="Soups">
+                        <p>Soups</p>
+                    </button>
+                    <button id="Dessert">
+                        <p>Dessert</p>
+                    </button>
+                    <button id="Beverages">
+                        <p>Beverages</p>
+                    </button>
+                    <button id="Specials">
+                        <p>Specials</p>
+                    </button>
                 </div>
                 <div class="menu-section vcontainer w100 pos-rel bcol2 rad5">
                     <div class="subcat-wrapper vcontainer">
@@ -275,11 +297,13 @@
                     </div>
                     <div class="cart-button-wrapper container w100 sbet gap15">
                         <button id="up-button" class="res-button button pad5b rad5 bcol4" onclick="scrollToE('top', 0)">
-                            <svg viewBox="0 0 200 200" class="img25" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-                                <polygon points="100,20 190,173.205 10,173.205" fill="#0D5D56"/>
-                            </svg> 
+                            <svg viewBox="0 0 200 200" class="img25" xmlns="http://www.w3.org/2000/svg"
+                                preserveAspectRatio="xMidYMid meet">
+                                <polygon points="100,20 190,173.205 10,173.205" fill="#0D5D56" />
+                            </svg>
                         </button>
-                        <button id="checkout-button" onclick="navToPage('../cart & payment/cartpayment.html')" class="res-button button f1 bcol1 rad5">
+                        <button id="checkout-button" onclick="navigateToPage('../cart & payment/cartpayment.html')"
+                            class="res-button button f1 bcol1 rad5">
                             <p class="noir ts25">checkout</p>
                         </button>
                     </div>
@@ -291,4 +315,5 @@
 </body>
 <script src="../global/global.js"></script>
 <script src="menu.js"></script>
+
 </html>
