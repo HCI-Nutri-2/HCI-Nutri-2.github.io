@@ -1,114 +1,56 @@
-function displayItems(categoryName) {
-  const title = document.getElementById('list-title');
-  const container = document.getElementById('list-container');
-
-  const category = menuData.find(cat => cat.category === categoryName);
-  if (!category) return;
-
-  title.textContent = category.category;
-  container.innerHTML = '';
-
-  category.items.forEach(item => {
-      const template = document.getElementById('item-template').content.cloneNode(true);
-
-      template.querySelector('.name').textContent = item.name;
-      template.querySelector('.desc').textContent = item.description;
-      template.querySelector('.price').textContent = `$${item.price.toFixed(2)}`;
-
-      container.appendChild(template);
-  });
-}
-
-function createNav(menu) {
-  const navContainer = document.getElementById('nav-container');
-
-  menu.forEach(category => {
-      const button = document.createElement('button');
-      button.textContent = category.category;
-      button.classList = "res-button button bcol1 pad15 w100 mont ts20";
-      button.addEventListener('click', () => displayItems(category.category));
-      navContainer.appendChild(button);
-  });
-}
-
-function loadContent () {
-  const storedMenuData = localStorage.getItem('menuData');
-  if (storedMenuData) {
-      menuData = JSON.parse(storedMenuData);
-      createNav(menuData);
-      displayItems(menuData[0].category); // Display the first category by default
-  } else {
-      // If no data is found in local storage, fetch it from the server
-      fetch('../global/data/menu.json')
-      .then(response => response.json())
-      .then(data => {
-          menuData = data.menu;
-          createNav(menuData);
-          displayItems(menuData[0].category)
-      })
-      .catch(error => console.error('Error fetching data:', error));
-  }
-}
-
-function loadModal () {
-  const modal = document.getElementById('add-item-modal');
-  const btn = document.getElementById('add-item-button');
-  const span = document.getElementsByClassName('close')[0];
-
-  // Open the modal
-  btn.onclick = function() {
-      modal.style.display = 'block';
-  }
-
-  // Close the modal
-  span.onclick = function() {
-      modal.style.display = 'none';
-  }
-
-  // Close the modal when clicking outside of it
-  window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = 'none';
-      }
-  }
-
-  // Handle form submission
-  document.getElementById('add-item-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const category = document.getElementById('category').value;
-      const name = document.getElementById('name').value;
-      const description = document.getElementById('description').value;
-      const price = parseFloat(document.getElementById('price').value);
-
-      // Find the category in menuData and add the new item
-      const categoryData = menuData.find(cat => cat.category === category);
-      if (categoryData) {
-          categoryData.items.push({
-              name: name,
-              description: description,
-              price: price
-          });
-      }
-
-      // Close the modal
-      modal.style.display = 'none';
-
-      // Reset the form
-      document.getElementById('add-item-form').reset();
-
-      // Update the displayed items if the current category is the one updated
-      const title = document.getElementById('list-title').textContent;
-      if (title === category) {
-          displayItems(category);
-      }
-  });
-}
-
-
 document.addEventListener('DOMContentLoaded', function() {
-  let menuData;
-
-  loadContent();
-  loadModal();
+    console.log(menu)
+    tryRun(genAdminNav)
+    tryRun(genAdminFill(menu[0].id))
 });
+
+const edit = document.getElementById('editModal')
+const cate = document.getElementById('cateModal')
+
+function genAdminNav() {
+    const nav = document.getElementById('nav');
+    menu.forEach(category => {
+      nav.insertAdjacentHTML('beforeend', `
+        <div class="button pad10 rad5 bcol2 col3" onclick="genAdminFill('${category.id}')">
+          <p class="mont bold">${category.category}</p>
+        </div>`)
+    })
+}
+
+function genAdminFill (categoryId) {
+    const title = document.getElementById('title')
+    const wrapper = document.getElementById('items-wrapper')
+    const category = menu.find(cat => cat.id === categoryId)
+    title.textContent = category.category
+
+    wrapper.innerHTML = ''
+
+    category.items.forEach(item => {
+        wrapper.insertAdjacentHTML('beforeend', `
+            <div class="container gap5 sbet center ovx-a">
+                <div class="container mont bold col3 ts15 f1 ovx-a">
+                    <p class="id">${item.id}</p>
+                    <p class="name">${item.name}</p>
+                    <p class="price">${item.price}</p>
+                    <p class="desc">${item.description}</p>
+                </div>
+                <div class="container gap10">
+                    <button class="res-button button pad5 rad5 bcol3 col1" onclick="editItem('${item.id}')"><p class="ts15 bold mont">Edit</p></button>
+                    <button class="res-button button pad5 rad5 bred cwhite" onclick="deleteItem('${item.id}')"><p class="ts15 bold mont">Delete</p></button>
+                </div>
+            </div>
+        `)
+    })
+}
+
+function editItem (id) {
+    const item = findMenuItem(id)
+    toggleModal('editModal')
+    const wrapper = edit.querySelector('.modal-input-wrapper')
+
+    wrapper.getElementById('editName').textContent
+    wrapper.getElementById('editPrice')
+    wrapper.getElementById('editDesc')
+
+    console.log(item.id, item.name, item.price, item.description)
+}

@@ -5,83 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../global/global.css">
     <link rel="stylesheet" href="admin.css">
-    <title>Management</title>
+    <title>Admin Panel</title>
 </head>
-<body id="settings">
-    <template id="item-template">
-        <div class="vcontainer gap15">
-            <div class="item container w100 sbet">
-                <div class="container col3 bold f1">
-                    <p class="name elipsis"></p>
-                    <p class="price elipsis"></p>
-                    <p class="desc elipsis"></p>
+<body id="admin">
+    <div id="editModal" class="modal-wrapper container pos-fxd w100 h100 none pos-rel">
+        <div class="background pos-abs w100 h100" onclick="(toggleModal('editModal'))"></div>
+        <div class="modal container rad15 bcol3">
+            <img src="../global/imgs/placeholder.png" class="w50 rad10">
+            <div class="vcontainer gap15 f1">
+                <div class="container sbet">
+                    <p class="mont ts30 bold col1">Input Details</p>
+                    <button class="res-button button bred rad5 img30" onclick="(toggleModal('editModal'))"></button>
                 </div>
-                <div class="container gap15">
-                    <button class="res-button button bcol-tsp col3 pad5 mont bold ts15 hov-ul">Edit</button>
-                    <button class="res-button button bcol-tsp col3 pad5 mont bold ts15 hov-ul">Delete</button>
+                <div class="modal-input-wrapper vcontainer gap25 pad10 f1">
+                    <input id="editName" type="text" class="res-input bcol-tsp pad5a col2 mont ts15" placeholder="Name">
+                    <input id="editPrice" type="number" class="res-input bcol-tsp pad5a col2 mont ts15" placeholder="price">
+                    <input id="editDesc" type="text" class="res-input bcol-tsp pad5a col2 mont ts15" placeholder="Description">
+                </div>
+                <div class="button col1 rad5 pad5 bcol1 jcenter center" onclick="addItem(this)">
+                    <p class="mont ts20 col3 bold jcenter">Add Item</p>
+                </div>
+                <div class="button col1 rad5 pad5 bcol1 jcenter center none" onclick="updateItem(this)">
+                    <p class="mont ts20 col3 bold jcenter">Update Item</p>
                 </div>
             </div>
-            <hr>
-        </div>
-    </template>
-
-    <div id="add-item-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Add New Item</h2>
-            <form id="add-item-form">
-                <label for="category">Category:</label>
-                <select id="category" name="category" required>
-                    <option value="Appetizers">Entrees</option>
-                    <option value="Soups">Soup & Salads</option>
-                    <option value="Main Courses">Main</option>
-                    <option value="Desserts">Desserts</option>
-                    <option value="Beverages">Beverages</option>
-                    <option value="Specials">Specials</option>
-                </select>
-                <br><br>
-                <label for="name">Item Name:</label>
-                <input type="text" id="name" name="name" required>
-                <br><br>
-                <label for="description">Description:</label>
-                <input type="text" id="description" name="description" required>
-                <br><br>
-                <label for="price">Price:</label>
-                <input type="number" id="price" name="price" step="0.01" required>
-                <br><br>
-                <button type="submit">Add Item</button>
-            </form>
         </div>
     </div>
 
-    <div class="true-wrapper vcontainer">
-
+    <div class="vcontainer true-wrapper bcol3 ovx-a ovy-a">
         <header class="container pos-stk center sbet bcol3"></header>
-
-        <main class="container w100 f1">
-            <div class="vcontainer bcol1">
-                <button class="res-button button container bcol4 pad10 gap15 center" onclick="addCat()">
-                    <img src="../global/icons/plus.png" class="img20">
-                    <p class="mont bold ts15">Add Category</p>
-                </button>
-                <div id="nav-container" class="vcontainer bcol1">
-
-                </div>
+        <main class="container f1 gap25 ovx-a ovy-a">
+            <div id="nav-wrapper" class="vcontainer bcol3 gap15 ovy-a">
+                <div class="button bcol1 container rad15 pad10 gap15 left sbet center"><p class="mont ts15 col3 bold">Add Category</p><img src="../global/icons/plus_white.png" class="img20"></div>
+                <hr>
+                <p class="mont bold col1 ts20">Categories</p>
+                <div id="nav" class="vcontainer bcol2 rad5 f1 cover pad10 ovy-a"></div>
             </div>
-            <div class="vcontainer bcol2 pad10 f1">
-                <div class="b-wrapper container sbet down">
-                    <p id="list-title" class="mont ts25"></p>
-                    <div class="container gap15">
-                        <button id="add-item-button" class="res-button bcol-tsp pad5"><img src="../global/icons/plus.png" alt=""></button>
-                    </div>
+            <div class="vcontainer gap15 f1 ovx-a">
+                <div class="container sbet center ovx-a">
+                    <p id="title" class="mont bold ts25 col1"></p>
+                    <div onclick="toggleModal('editModal')" class="button bcol1 container rad15 pad10 gap15 left sbet center"><p class="rem mont ts15 col3 bold elipsis">Add Item</p><img src="../global/icons/plus.svg" class="img20"></div>
                 </div>
                 <hr>
-                <div id="list-container" class="vcontainer w100 gap15 pad10">
+                <div class="container gap5 sbet pad10a ovx-h">
+                    <div id="guide" class="container mont col1 ts20 f1 ovx-h">
+                        <p class="id">ID</p>
+                        <p class="name">Name</p>
+                        <p class="price">Price</p>
+                        <p class="desc">Description</p>
+                    </div>
+                    <div class="container gap10">
+                        <button class="res-button pad5a bcol-tsp col-tsp"><p class="ts15 bold mont">Edit</p></button>
+                        <button class="res-button pad5a bcol-tsp col-tsp"><p class="ts15 bold mont">Delete</p></button>
+                    </div>
                 </div>
+                <div id="items-wrapper" class="vcontainer bcol2 rad5 pad10 gap15 f1 ovx-a"></div>
             </div>
         </main>
-
-    </div>
+    </div> 
 </body>
 <script src="../global/global.js"></script>
 <script src="admin.js"></script>

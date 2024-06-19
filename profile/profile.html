@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Profile</title>
-  <!-- <link rel="stylesheet" href="../global/global.css"> -->
   <link href="profile.css" rel="stylesheet" type="text/css" href="profile.css" />
 </head>
 
@@ -38,6 +37,7 @@
               <div id="name" class="content">Dheovan Winata Alvian</div>
               <input type="text" id="name-input" class="edit-input" />
               <button onclick="editName()" id="edit-name" class="edit">Edit</button>
+              <button onclick="cancelName()" id="cancel-name" class="cancel">Cancel</button>
               <button onclick="confirmName()" id="confirm-name" class="confirm">Confirm</button>
             </div>
 
@@ -46,6 +46,7 @@
               <div id="email" class="content">DheovanAlvian@gmail.com</div>
               <input type="text" id="email-input" class="edit-input" />
               <button onclick="editEmail()" id="edit-email" class="edit">Edit</button>
+              <button onclick="cancelEmail()" id="cancel-email" class="cancel">Cancel</button>
               <button onclick="confirmEmail()" id="confirm-email" class="confirm">Confirm</button>
 
             </div>
@@ -56,6 +57,7 @@
               <input type="text" id="phone-input" class="edit-input" />
 
               <button onclick="editPhone()" id="edit-phone" class="edit">Edit</button>
+              <button onclick="cancelPhone()" id="cancel-phone" class="cancel">Cancel</button>
               <button onclick="confirmPhone()" id="confirm-phone" class="confirm">Confirm</button>
             </div>
           </div>
@@ -76,29 +78,40 @@
               <div class="element_container">
                 <p id="alamat1" class="detail">Jalan Purwosari-Sayung-Purkatoro 180 RT 002/001, Jawa Tengah, provinsi
                   Semarang, kota magelang, Indonesia kode pos 51364 </p>
-                <input type="text" id="alamat1-input" class="alamat-input" />
+                <textarea type="text" id="alamat1-input" class="alamat-input"></textarea>
                 <button onclick="editAlamat1()" id="alamat1-button-edit" class="edit_button">Edit</button>
+                <button onclick="cancelAlamat1()" id="alamat1-button-cancel"
+                  class="cancel cancel_button">Cancel</button>
                 <button onclick="confirmAlamat1()" id="alamat1-button-confirm" class="confirm_button">Confirm</button>
               </div>
+
               <div class="element_container">
                 <p id="alamat2" class="detail">Jalan Purwosari-Sayung-Purkatoro 180 RT 002/001, Jawa Tengah, provinsi
                   Semarang, kota magelang, Indonesia kode pos 51364 </p>
-                <input type="text" id="alamat2-input" class="alamat-input" />
+                <textarea type="text" id="alamat2-input" class="alamat-input"></textarea>
                 <button onclick="editAlamat2()" id="alamat2-button-edit" class="edit_button">Edit</button>
+                <button onclick="cancelAlamat2()" id="alamat2-button-cancel"
+                  class="cancel cancel_button">Cancel</button>
                 <button onclick="confirmAlamat2()" id="alamat2-button-confirm" class="confirm_button">Confirm</button>
               </div>
+
               <div class="element_container">
                 <p id="alamat3" class="detail">Jalan Purwosari-Sayung-Purkatoro 180 RT 002/001, Jawa Tengah, provinsi
                   Semarang, kota magelang, Indonesia kode pos 51364 </p>
-                <input type="text" id="alamat3-input" class="alamat-input" />
+                <textarea type="text" id="alamat3-input" class="alamat-input"> </textarea>
                 <button onclick="editAlamat3()" id="alamat3-button-edit" class="edit_button">Edit</button>
+                <button onclick="cancelAlamat3()" id="alamat3-button-cancel"
+                  class="cancel cancel_button">Cancel</button>
                 <button onclick="confirmAlamat3()" id="alamat3-button-confirm" class="confirm_button">Confirm</button>
               </div>
+
               <div class="element_container">
                 <p id="alamat4" class="detail">Jalan Purwosari-Sayung-Purkatoro 180 RT 002/001, Jawa Tengah, provinsi
                   Semarang, kota magelang, Indonesia kode pos 51364 </p>
-                <input type="text" id="alamat4-input" class="alamat-input" />
+                <textarea type="text" id="alamat4-input" class="alamat-input"></textarea>
                 <button onclick="editAlamat4()" id="alamat4-button-edit" class="edit_button">Edit</button>
+                <button onclick="cancelAlamat4()" id="alamat4-button-cancel"
+                  class="cancel cancel_button">Cancel</button>
                 <button onclick="confirmAlamat4()" id="alamat4-button-confirm" class="confirm_button">Confirm</button>
               </div>
             </div>

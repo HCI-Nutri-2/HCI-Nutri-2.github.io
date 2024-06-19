@@ -1,0 +1,305 @@
+@font-face {
+    font-family: 'montseratt-medium';
+    src: url(../global/assets/fonts/Montseratt-Medium.ttf);
+}
+
+body {
+    margin: 0;
+    font-family: 'montseratt-medium', sans-serif;
+    background-color: #f1e3c5;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    height: 65px;
+    padding: 0 3vw;
+    gap: 3vw;
+    z-index: 50;
+}
+header .search-bar {
+    padding: 8px 12px;
+    max-width: 800px;
+}
+header .search-bar img, header .button-wrapper div img {
+    width: 20px;
+    height: 20px;
+}
+header .button-wrapper div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+}
+
+header #h-img-2 {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    header #h-img-1 {
+        display: none;
+    }
+    header #h-img-2 {
+        display: flex;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+.main {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    justify-content: center;
+}
+
+.shopping-cart {
+    flex: 2.5;
+    background-color: #284b48;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    margin-right: 20px;
+    height: calc(100vh - 40px);
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.shopping-cart::-webkit-scrollbar {
+    width: 15px;
+}
+
+.shopping-cart::-webkit-scrollbar-track {
+    background: #284b48;
+    border-radius: 5px;
+}
+
+.shopping-cart::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: #284b48;
+    border-style: solid;
+}
+
+.shopping-cart::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.shopping-cart::-webkit-scrollbar-button:vertical:decrement {
+    border-bottom-left-radius: 8.5px;
+    border-bottom-right-radius: 8.5px;
+ }
+
+.shoppingCartTop {
+    display: flex;
+}
+
+.back-button {
+    height: 20px;
+    margin-left: 1110px;
+    color: white;
+    font-size: 16px;
+    background-color: #1b2e2f;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.shopping-cart h2 {
+    margin-top: 0;
+}
+
+.cart-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    background-color: #336d63;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.item-image {
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+    background-color: #4e8b7f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    border-radius: 5px;
+    object-fit: fill;
+}
+
+.item-image img {
+    width: 130%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.item-details {
+    flex: 1;
+    min-width: 200px;
+    margin-right: 80px;
+}
+
+.food-name {
+    font-size: 16px;
+    padding-bottom: 15px;
+    font-weight: bold;
+}
+
+.desc-addons {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.item-quantity {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.remove-btn {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.payment-summary {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    background-color: #3c6659;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    justify-content: space-between;
+}
+
+.payment-methods h2 {
+    margin-top: 0;
+}
+
+.payment-option-dana{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.payment-option-gopay{
+    background-color: #d5f1fc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.payment-option-ovo{
+    background-color: #ebd5ff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.payment-option-shopeePay{
+    background-color: #ffcfc1;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.payment-option-debit{
+    background-color: #d6f4ff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.payment-option-dana img {
+    width: 125px;
+    height: auto;
+}
+
+.payment-option-gopay img {
+    width: 175px;
+    height: 45px;
+}
+
+.payment-option-ovo img {
+    width: 125px;
+    height: auto;
+}
+
+.payment-option-shopeePay img {
+    width: 125px;
+    height: auto;
+}
+
+.payment-option-debit img {
+    width: 200px;
+    height: 60px;
+}
+
+.order-summary {
+    background-color: #599682;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.order-details p {
+    margin: 5px 0;
+}
+
+.promo-code {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.promo-code button {
+    background-color: #407b57;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.proceed-btn {
+    background-color: #ffcc00;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}

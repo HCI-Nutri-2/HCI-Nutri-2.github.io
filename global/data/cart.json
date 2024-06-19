@@ -1,0 +1,12 @@
+[
+    {
+        "item": "product1",
+        "quantity": 1,
+        "modifiers": [
+            "No Parsley",
+            "Extra Prawn",
+            "Less lettuce"
+        ],
+        "note": "more chilli"
+    }
+]

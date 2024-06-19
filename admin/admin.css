@@ -1,77 +1,44 @@
-#nav-container {
-  width: 200px;
+main {
+    padding: 5vh 3vw;
 }
 
-#nav-container button {
-  text-align: left;
+#nav-wrapper {
+    width: 20vw;
+    min-width: 200px;
 }
 
-.b-wrapper button {
-  border-radius: 5px;
+.id, .name, .price, .desc {
+    text-wrap: nowrap;
+    overflow-x: auto;
 }
 
-.b-wrapper button img{
-  width: 20px;
-  height: 20px;
+.id {
+    width: 10%;
+    min-width: 60px;
 }
 
 .name {
-  width: 22%;
+    width: 25%;
+    min-width: 80px;
 }
 
 .price {
-  width: 15%;
+    width: 15%;
+    min-width: 60px;
 }
 
 .desc {
-  width: 55%;
+    flex: 1;
 }
 
-.item {
-  align-items: center;
-  padding: 15px 0 0 0;
-  overflow-y: auto;
-  font-family: "noir";    
-}
-
-/* modal */
-.modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgba(0,0,0,0.4); 
-  padding-top: 60px; 
+.background {
+    z-index: 1000;
 }
 
 .modal {
-  color: var(--2);
-  font-family: "Helvetica";
+    z-index: 2000;
 }
 
-.modal-content {
-  border-radius: 5px;
-  background-color: var(--3);
-  margin: 5% auto; 
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; 
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
+.modal-input-wrapper input{
+    border-bottom: 2px solid var(--1);
 }

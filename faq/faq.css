@@ -1,0 +1,17 @@
+* {
+    transition: all 0.3s ease;
+}
+
+main {
+    padding: 5vh 3vw;
+    gap: 3vw;
+}
+
+.ss {
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.ss:hover{
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    transform: translate(-3px,-5px);
+}

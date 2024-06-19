@@ -1,319 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../global/global.css">
-    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="main.css">
     <title>Menu</title>
 </head>
-
-<body id="menu" class="bcol3">
+<body id="menu">
     <div id="top"></div>
-    <section id="login-form" class="container center jcenter">
-        <div class="form-wrapper container rad10 bcol3">
 
-            <section class="carousel modal-sizing pos-rel">
+    <div id="loginModal" class="modal-wrapper container pos-fxd w100 h100 pos-rel none">
+        <div class="background pos-abs w100 h100" onclick="(toggleModal('loginModal'))"></div>
+        <div class="modal container rad15 bcol3 pos-rel">
+            <div id="modal-close" class="pos-abs pad15 rad5 button cwhite mont bold ts30" onclick="(toggleModal('loginModal'))">X</div>
+            <section class="carousel w50 pos-rel rem">
                 <div class="slider container pos-rel w100 h100">
-                    <img src="../global/icons/babiPanggang.jpg" class="fit-img">
-                    <img src="../global/icons/babiPanggang.jpg" class="fit-img">
+                    <img src="../global/imgs/placeholder.png" class="fit-img">
+                    <img src="../global/imgs/placeholder.png" class="fit-img">
                 </div>
                 <div class="slider-nav container pos-abs"></div>
             </section>
-
             <section class="container down">
+                <div id="login" class="vcontainer pad15 gap25">
+                    <p class="fonseca-mid ts50 col2 lineh40">Login</p>
+                    <div class="form-stock vcontainer sbet">
+                        <div class= "form-input vcontainer gap25">
+                            <input id="usern" type="text" placeholder="Username" class="res-input bcol-tsp f1 mont ts15 col4">
+                            <div class="vcontainer gap5">
+                                <input id="passw" type="password" placeholder="Password" class="res-input bcol-tsp f1 mont ts15 col4">
+                                <p class="button col4 mont ts10 " onclick="toggleStates('reset')">Forgot Password?</p>
+                            </div>
+                            <div class="vcontainer gap15">
+                                <button class="res-button button bcol1 col3 pad5 rad5 mont ts15 bold" onclick="toggleLogin(true)">Sign In</button>
+                                <button class="res-button button bcol1 col3 pad5 rad5 mont ts15 bold" onclick="toggleLogin(true)">Continue With Google</button>
+                                <button class="res-button button bcol1 col3 pad5 rad5 mont ts15 bold" onclick="toggleLogin(true)">Continue With Facebook</button>
+                            </div>
+                        </div>
+                        <div class="container mont gap15 ts15">
+                            <p class="col4">Don't Have An Account?</p>
+                            <p class="button col1 bold hov-ul" onclick="toggleStates('regis')">Register</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="regis" class="vcontainer pad15 gap25 none">
+                    <p class="fonseca-mid ts50 col2 lineh40">Register</p>
+                    <div class="form-stock vcontainer sbet">
+                        <div class= "form-input vcontainer gap25">
+                            <input type="text" placeholder="Username" class="res-input bcol-tsp f1 mont ts15 col4">
+                            <input type="password" placeholder="Password" class="res-input bcol-tsp f1 mont ts15 col4">
+                            <input type="email" placeholder="Email" class="res-input bcol-tsp f1 mont ts15 col4">
+                            <div class="vcontainer gap15">
+                                <button class="res-button button bcol1 col3 pad5 rad5 mont ts15 bold" onclick="toggleLogin(true)">Create New Account</button>
+                            </div>
+                        </div>
+                        <div class="container mont gap15 ts15">
+                            <p class="col4">Already Have An Account?</p>
+                            <p class="button col1 bold hov-ul" onclick="toggleStates('login')">Login</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="reset" class="vcontainer pad15 gap25 none">
+                    <p class="fonseca-mid ts50 col2 lineh40">Recover</p>
+                    <div class="form-stock vcontainer sbet">
+                        <div class= "form-input vcontainer">
 
-                <div id="login" class="form vcontainer gap20">
-                    <p class="fonseca-mid ts50 col2">Login</p>
-                    <div class="form-input-wrapper vcontainer sbet w100">
-
-                        <div class="form-input vcontainer">
-                            <!-- inputs -->
-                            <div class="inputs vcontainer gap25">
-                                <input type="text" placeholder="Username" class="res-input bcol-tsp">
-                                <div class="vcontainer gap5">
-                                    <input type="password" placeholder="Password" class="res-input bcol-tsp">
-                                    <p class="button col4 noir ts10 " onclick="toggleStates('reset')">Forgot Password?
-                                    </p>
+                            <div id="reset-1" class="vcontainer gap25 none">
+                                <input type="email" placeholder="Email" class="res-input bcol-tsp f1 mont ts15 col4">
+                                <button class="res-button button bcol1 col3 pad5 rad5 mont ts15 bold" onclick="toggleResStates('reset-2')">Send OTP</button>
+                            </div>
+                            <div id="reset-2" class="vcontainer gap25 none">
+                                <div class="container gap5">
+                                    <input type="text" placeholder="OTP" class="res-input bcol-tsp f1 mont ts15 col4">
+                                    <p class="button nowrap mont col2 ts15">Resend OTP</p>
+                                </div>
+                                <button class="res-button button bcol1 col3 pad5 rad5 mont ts15 bold" onclick="toggleResStates('reset-3')">Verify</button>
+                            </div>
+                            <div id="reset-3" class="vcontainer gap25 none">
+                                <div class="vcontainer gap15">
+                                    <input type="password" placeholder="New Password" class="res-input bcol-tsp f1 mont ts15 col4">
+                                    <input type="password" placeholder="Re-type Password" class="res-input bcol-tsp f1 mont ts15 col4">
+                                </div>
+                                <div class="vcontainer gap15">
+                                    <button class="res-button button bcol1 col3 pad5 rad5 mont ts15 bold" onclick="toggleLogin(true)">Change Password</button>
                                 </div>
                             </div>
-                            <!-- buttons -->
-                            <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Sign
-                                    In</button>
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Continue With
-                                    Google</button>
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Continue With
-                                    Facebook</button>
-                            </div>
                         </div>
-
-                        <div class="container noir gap15 ts15">
-                            <p class="col4">Don't Have An Account?</p>
-                            <p class="button col1 hov-ul" onclick="toggleStates('regis')">Register</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="regis" class="form vcontainer gap20 none">
-                    <p class="fonseca-mid ts50 col2">Register</p>
-                    <div class="form-input-wrapper vcontainer sbet w100">
-
-                        <div class="form-input vcontainer">
-                            <!-- inputs -->
-                            <div class="inputs vcontainer gap25">
-                                <input type="text" placeholder="Username" class="res-input bcol-tsp">
-                                <input type="password" placeholder="Password" class="res-input bcol-tsp">
-                                <input type="email" placeholder="Email" class="res-input bcol-tsp">
-                            </div>
-                            <!-- buttons -->
-                            <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Create New
-                                    Account</button>
-                            </div>
-                        </div>
-
-                        <div class="container noir gap15 ts15">
-                            <p class="col4">Already Have An Account?</p>
-                            <p class="button col1 hov-ul" onclick="toggleStates('login')">Login</p>
-                        </div>c
-                    </div>
-                </div>
-
-                <div id="reset" class="form vcontainer gap25 none">
-                    <p class="fonseca-mid ts50 col2 lineh50">Reset Password</p>
-                    <div class="form-input-wrapper vcontainer sbet w100">
-
-                        <div id="reset-form1" class="form-input vcontainer none">
-                            <!-- inputs -->
-                            <div class="inputs vcontainer gap25">
-                                <input type="email" placeholder="Email" class="res-input bcol-tsp">
-                            </div>
-                            <!-- buttons -->
-                            <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3"
-                                    onclick="toggleResStates('reset-form2')">Send OTP</button>
-                            </div>
-                        </div>
-
-                        <div id="reset-form2" class="form-input vcontainer none">
-                            <!-- inputs -->
-                            <div class="inputs container gap25 pos-rel">
-                                <input type="text" placeholder="OTP" class="res-input bcol-tsp">
-                                <p class="nowrap noir button col2 pos-abs ts15" style="right: 0;">Resend OTP</p>
-                            </div>
-                            <!-- buttons -->
-                            <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3"
-                                    onclick="toggleResStates('reset-form3')">Confirm OTP</button>
-                            </div>
-                        </div>
-
-                        <div id="reset-form3" class="form-input vcontainer none">
-                            <!-- inputs -->
-                            <div class="inputs vcontainer gap25">
-                                <input type="password" placeholder="New Password" class="res-input bcol-tsp">
-                                <input type="password" placeholder="Re-Type Password" class="res-input bcol-tsp">
-                            </div>
-                            <!-- buttons -->
-                            <div class="buttons vcontainer gap15">
-                                <button class="res-button button bcol1 col3" onclick="toggleLogin(true)">Change
-                                    Password</button>
-                            </div>
-                        </div>
-
-                        <div class="container noir gap15 ts15">
+                        <div class="container mont gap15 ts15">
                             <p class="col4">Go Back?</p>
-                            <p class="button col1 hov-ul" onclick="toggleStates('login')">Login</p>
+                            <p class="button col1 bold hov-ul" onclick="toggleStates('login')">Login</p>
                         </div>
                     </div>
                 </div>
-
             </section>
         </div>
-    </section>
-    <section id="addons-form" class="container center jcenter w100 h100 none"></section>
+    </div>
+    <div id="addonsModal" class="modal-wrapper container pos-fxd w100 h100 pos-rel none">
+        <div class="background pos-abs w100 h100" onclick="(toggleModal('addonsModal'))"></div>
+        <div class="modal container rad15 pad30 gap30 bcol3">
+            <div class="vcontainer left-wrapper ovx-h">
+                <p class="moorley ts50 col1 nowrap">Add-ons & Modifications</p>
+                <div class="img-container container bcol1 rad10 pos-rel">
+                    <img src="../global/imgs/placeholder.png" class="fit-img">
+                    <div class="pos-abs container w100 h100" style="box-shadow: inset 0 -80px 50px -40px var(--3)"></div>
+                    <div class="item-name-overlay container w100 sbet pad5 pos-abs down">
+                        <p id="addonsName" class="fonseca ts30 col2 lineh25">Item Name</p>
+                        <input id="addonsAmount" type="number" class="res-input bcol1 col3 pad5 rad10 right mont bold ts15" value="1" max="99" min="0">
+                    </div>
+                </div>
+            </div>
 
+            <div class="vcontainer right-wrapper">
+                <div class="container sbet down">
+                    <div class="container gap15">
+                        <p class="button col2 hov-ul moorley ts50" onclick="toggleAddonsMenu('desc')">Details</p>
+                        <p class="button col2 hov-ul moorley ts50" onclick="toggleAddonsMenu('info')">Info</p>
+                    </div>
+                    <div class="container gap5 col4">
+                        <p class="moorley ts25">$</p>
+                        <p id="addonsPrice" class="noir ts25">20</p>
+                    </div>
+                </div>
+
+                <div class="vcontainer f1 gap25">
+                    <div class="ovy-a vcontainer f1 bcol4 rad10 pad10">
+                        <div id="addonsDesc" class="vcontainer noir ts20 col3 "></div>
+                        <div id="addons-modal-content" class="vcontainer none">
+                            <input id="addonsNote" type="text" placeholder="note" class="res-input bcol-tsp mont ts15 ">
+                        </div>
+                    </div>
+    
+                    <div id="addons-buttons" class="container sbet gap25 noir ts20"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--main content-->
+    <div id="pop-up-wrapper" class="vcontainer pos-fxd mar15 gap15"></div>
+    <div class="container bcol1 col3 mont ts15 pad5 gap5 center jcenter mar0" onclick="navTo('../faq/faq.html')"><p>Need Some Help? Visit our</p><p class="button col3 bold hov-ul">FAQ</p></div>
     <header class="container pos-stk center sbet bcol3"></header>
 
-    <main>
-        <section class="carousel page-sizing pos-rel w100">
-            <div class="slider container pos-rel w100 h100">
-                <img src="../global/imgs/carousel_1.png" class="fit-img" alt="1">
-                <img src="../global/imgs/carousel_2.png" class="fit-img" alt="2">
-            </div>
-            <div class="slider-nav container pos-abs ">
-            </div>
-        </section>
-        <section id="main-container" class="container w100">
-            <div class="menu-wrapper vcontainer f1">
-                <div class="menu-nav container seve">
-                    <button id="Entrees">
-                        <p>Entrees</p>
-                    </button>
-                    <button id="Salads">
-                        <p>Salads</p>
-                    </button>
-                    <button id="Soups">
-                        <p>Soups</p>
-                    </button>
-                    <button id="Dessert">
-                        <p>Dessert</p>
-                    </button>
-                    <button id="Beverages">
-                        <p>Beverages</p>
-                    </button>
-                    <button id="Specials">
-                        <p>Specials</p>
-                    </button>
-                </div>
-                <div class="menu-section vcontainer w100 pos-rel bcol2 rad5">
-                    <div class="subcat-wrapper vcontainer">
-                        <p class="subcat-name noir">Makanan Protein Tinggi</p>
-                        <div class="item-wrapper container">
-                            <div class="menu-item pos-rel" onclick="menuClick(this)">
-                                <img class="w100 ar1 rad5" src="../global/icons/babiPanggang.jpg" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Daging olahan </p>
-                                    <p class="item-desc noir pos-abs">Digoreng pakai minyak zaitun</p>
-                                </div>
-                            </div>
-                            <div class="menu-item pos-rel" onclick="menuClick(this)">
-                                <img class="w100 ar1 rad5" src="../global/icons/roastedPork.jpg" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Babi guling</p>
-                                    <p class="item-desc noir pos-abs">Berkhasiat</p>
-                                </div>
-                            </div>
-                            <div class="menu-item pos-rel" onclick="menuClick(this)">
-                                <img class="w100 ar1 rad5" src="../global/icons/pork.jpg" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Dada Ayam</p>
-                                    <p class="item-desc noir pos-abs">Filet dada ayam</p>
-                                </div>
-                            </div>
-                            <div class="menu-item pos-rel" onclick="menuClick(this)">
-                                <img class="w100 ar1 rad5" src="../global/icons/telorCeplok.jpg" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Tempe Bacem</p>
-                                    <p class="item-desc noir pos-abs">Berkarbohidrat dan berprotein</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="subcat-wrapper vcontainer">
-                        <p class="subcat-name noir">Sayur dan Protein</p>
-                        <div class="item-wrapper container res-scroll">
-                            <div class="menu-item pos-rel" onclick="menuClick(this)">
-                                <img class="w100 ar1 rad5" src="../global/icons/boncis.jpg" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Sawi telur</p>
-                                    <p class="item-desc noir pos-abs">ongseng sawi dan telur bebek</p>
-                                </div>
-                            </div>
-                            <div class="menu-item pos-rel" onclick="menuClick(this)">
-                                <img class="w100 ar1 rad5" src="../global/icons/adeptusTemptation.jpg" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Cah Jamur</p>
-                                    <p class="item-desc noir pos-abs">Jamur direbus dengan kaldu</p>
-                                </div>
-                            </div>
-                            <div class="menu-item pos-rel" onclick="menuClick(this)">
-                                <img class="w100 ar1 rad5" src="../global/icons/telorDaging.jpg" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Ayam saus tiram</p>
-                                    <p class="item-desc noir pos-abs">ayam rebus dengan bumbu tiram</p>
-                                </div>
-                            </div>
-                            <div class="menu-item pos-rel" onclick="menuClick(this)">
-                                <img class="w100 ar1 rad5" src="../global/icons/baso.jpg" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Bakso Rebus</p>
-                                    <p class="item-desc noir pos-abs">daging diolah dengan bahan segar</p>
-                                </div>
-                            </div>
-                            <div class="menu-item pos-rel" onclick="menuClick(this)">
-                                <img class="w100 ar1 rad5" src="../global/icons/bayem.jpg" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Bayem</p>
-                                    <p class="item-desc noir pos-abs">Sayur bayem rebus</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="subcat-wrapper vcontainer">
-                        <p class="subcat-name noir">Sayur-mayur</p>
-                        <div class="item-wrapper container res-scroll">
-                            <div class="menu-item pos-rel" onclick="menuClick(this)">
-                                <img class="w100 ar1 rad5" src="../global/icons/capcay.jpg" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Cap-cay</p>
-                                    <p class="item-desc noir pos-abs">irisan cah sayur-sayuran</p>
-                                </div>
-                            </div>
-                            <div class="menu-item pos-rel" onclick="menuClick(this)">
-                                <img class="w100 ar1 rad5" src="../global/icons/oyong.jpg" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">oyong</p>
-                                    <p class="item-desc noir pos-abs">oyong rebus berserta kaldu</p>
-                                </div>
-                            </div>
-                            <div class="menu-item pos-rel" onclick="menuClick(this)">
-                                <img class="w100 ar1 rad5" src="../global/icons/bonciskuah.jpg" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">pokcay</p>
-                                    <p class="item-desc noir pos-abs">sayuran berkhasiat tinggi</p>
-                                </div>
-                            </div>
-                            <div class="menu-item pos-rel" onclick="menuClick(this)">
-                                <img class="w100 ar1 rad5" src="../global/icons/tofu.jpg" alt="">
-                                <div class="item-overlay pos-abs pad5a">
-                                    <p class="item-name fonsecab">Tahu telur</p>
-                                    <p class="item-desc noir pos-abs">isinya berbagai macam sayur</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cart-wrapper">
-                <div id="cart" class="vcontainer">
-                    <div class="container w100 sbet down">
-                        <p id="cart-text" class="moorley col2">Cart</p>
-                        <p id="total" class="noir col1">total</p>
-                    </div>
-                    <div id="cart-item-wrapper" class="vcontainer f1 rad5">
-                        <!--cart item-->
-                        <div class="cart-item container sbet w100 pad5">
-                            <div class="vcontainer">
-                            </div>
-                            <div class="vcontainer">
-                                <p class="price"></p>
-                                <button class="res-button"><img src="" alt=""></button> <!--open modal-->
-                                <button class="res-button"></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart-button-wrapper container w100 sbet gap15">
-                        <button id="up-button" class="res-button button pad5b rad5 bcol4" onclick="scrollToE('top', 0)">
-                            <svg viewBox="0 0 200 200" class="img25" xmlns="http://www.w3.org/2000/svg"
-                                preserveAspectRatio="xMidYMid meet">
-                                <polygon points="100,20 190,173.205 10,173.205" fill="#0D5D56" />
-                            </svg>
-                        </button>
-                        <button id="checkout-button" onclick="navigateToPage('../cart & payment/cartpayment.html')"
-                            class="res-button button f1 bcol1 rad5">
-                            <p class="noir ts25">checkout</p>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="carousel pos-rel w100 vh50">
+        <div class="slider container pos-rel w100 h100">
+            <img src="../global/imgs/carousel_1.png" class="fit-img" alt="1">
+            <img src="../global/imgs/carousel_2.png" class="fit-img" alt="2">
+        </div>
+        <div class="slider-nav container pos-abs"></div>
+    </section>
 
+    <main class="container bcol3">
+        <div class="vcontainer f1 ovx-h">
+            <div id="menu-nav" class="container seve moorley col2 ts50 elipsis ovx-a"></div>
+            <div id="menu-item-container" class="container gap15 rgap15 pad10 rad5 bcol2 f1 fwrap"></div>
+        </div>
+        <div id="cart-wrapper" class="vcontainer">
+            <div id="cart" class="vcontainer ovy-a pos-stk">
+                <div class="container sbet down">
+                    <p class="moorley ts50 col2">Cart</p>
+                    <p id="cart-total" class="noir ts20 col2 pad5">Total</p>
+                </div>
+                <div class="vcontainer sbet gap15 f1 ovy-a">
+
+                    <div id="cart-item-wrapper" class="ovy-a res-scroll vcontainer bcol2 rad5 pad10 f1"></div>
+
+                    <div class="container gap15 ts20">
+                        <button class="res-button button bcol4 rad5 pad10" onclick="scrollInto('top')"><img src="../global/icons/up.png" class="img20"></button>
+                        <button class="res-button button bcol1 col3 f1 rad5 pad10a" onclick="navTo('../cart/index.html')"><p class="mont ts20 bold">Checkout</p></button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 <script src="../global/global.js"></script>
-<script src="menu.js"></script>
-
+<script src="main.js"></script>
 </html>
