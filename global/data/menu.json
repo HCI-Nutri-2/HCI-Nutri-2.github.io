@@ -1,7 +1,7 @@
 [
     {
         "id": "SS01",
-        "category": "Soup & Sld",
+        "category": "Soup & Salads",
         "items": [
             {
                 "id": "SS01-00",
@@ -26,18 +26,6 @@
                 "name": "Caesar Salad",
                 "description": "Crisp romaine lettuce with Caesar dressing.",
                 "price": 8.99
-            },
-            {
-                "id": "SS01-04",
-                "name": "Greek Salad",
-                "description": "Tomatoes, cucumbers, olives, and feta cheese.",
-                "price": 7.99
-            },
-            {
-                "id": "SS01-05",
-                "name": "House Sala",
-                "description": "Mixed greens with house vinaigrette.",
-                "price": 6.99
             }
         ]
     },
@@ -47,51 +35,51 @@
         "items": [
             {
                 "id": "M02-00",
-                "name": "Grilled Chicken",
-                "description": "Served with steamed vegetables.",
-                "price": 12.99
+                "name": "Grilled Salmon",
+                "description": "Served with quinoa and steamed vegetables.",
+                "price": 15.99
             },
             {
                 "id": "M02-01",
-                "name": "Pasta Primavera",
-                "description": "Pasta with fresh vegetables.",
-                "price": 10.99
+                "name": "Zucchini Noodles with Pesto",
+                "description": "Zucchini noodles with homemade pesto and cherry tomatoes.",
+                "price": 12.99
             },
             {
                 "id": "M02-02",
-                "name": "Beef Stroganoff",
-                "description": "Tender beef with creamy mushroom sauce.",
-                "price": 14.99
-            },
-            {
-                "id": "M02-03",
-                "name": "Fish and Chips",
-                "description": "Crispy fried fish with fries.",
+                "name": "Turkey Meatballs",
+                "description": "Lean turkey meatballs served with marinara sauce and spaghetti squash.",
                 "price": 13.99
             },
             {
-                "id": "M02-04",
-                "name": "Vegetarian Lasagna",
-                "description": "Layers of pasta with vegetables and cheese.",
+                "id": "M02-03",
+                "name": "Quinoa Stuffed Peppers",
+                "description": "Bell peppers stuffed with quinoa, black beans, and corn.",
                 "price": 11.99
             },
             {
+                "id": "M02-04",
+                "name": "Vegetable Stir-Fry",
+                "description": "Mixed vegetables stir-fried with tofu in a light soy sauce.",
+                "price": 10.99
+            },
+            {
                 "id": "M02-05",
-                "name": "Spring Rolls",
-                "description": "Crispy rolls stuffed with veggies.",
-                "price": 5.99
+                "name": "Baked Sweet Potato",
+                "description": "Baked sweet potato topped with black beans and avocado.",
+                "price": 9.99
             },
             {
                 "id": "M02-06",
-                "name": "Garlic Bread",
-                "description": "Toasted bread with garlic butter.",
-                "price": 3.99
+                "name": "Cauliflower Rice Bowl",
+                "description": "Cauliflower rice with grilled chicken, vegetables, and tahini sauce.",
+                "price": 12.99
             },
             {
                 "id": "M02-07",
-                "name": "Stuffed Mushrooms",
-                "description": "Mushrooms stuffed with cheese and herbs.",
-                "price": 7.99
+                "name": "Chickpea Salad",
+                "description": "Chickpeas mixed with cucumber, tomatoes, and a lemon vinaigrette.",
+                "price": 8.99
             }
         ]
     },
@@ -101,30 +89,31 @@
         "items": [
             {
                 "id": "D03-00",
-                "name": "Sereal Yogurt",
-                "description": "Creamy cheesecake with a graham cracker crust.",
-                "price": 6.99
+                "name": "Greek Yogurt Parfait",
+                "description": "Creamy Greek yogurt layered with fresh berries and granola.",
+                "price": 5.99
             },
             {
                 "id": "D03-01",
-                "name": "Chocolate Cake",
-                "description": "Rich chocolate cake with fudge frosting.",
+                "name": "Dark Chocolate Avocado Mousse",
+                "description": "Rich and creamy mousse made with avocado and dark chocolate.",
                 "price": 6.99
             },
             {
                 "id": "D03-02",
-                "name": "Apple Pie",
-                "description": "Classic apple pie with a flaky crust.",
-                "price": 5.99
+                "name": "Baked Apples",
+                "description": "Warm baked apples with a hint of cinnamon and a sprinkle of nuts.",
+                "price": 4.99
             },
             {
                 "id": "D03-03",
-                "name": "Ice Cream Mixed Fruits",
-                "description": "Ice cream with many things of fruits some example grape, banana, melon, strawberry.",
-                "price": 4.99
-            },
+                "name": "Chia Seed Pudding",
+                "description": "Chia seeds soaked in almond milk, topped with fresh fruit.",
+                "price": 5.99
+            }
         ]
-    },
+    }
+    ,
     {
         "id": "B04",
         "category": "Beverages",
@@ -167,34 +156,35 @@
         "items": [
             {
                 "id": "SP05-00",
-                "name": "Surf and Turf",
-                "description": "Grilled steak and lobster tail served with a side of garlic butter.",
-                "price": 29.99
+                "name": "Grilled Seabass",
+                "description": "Grilled seabass served with a side of steamed asparagus and lemon herb sauce.",
+                "price": 24.99
             },
             {
                 "id": "SP05-01",
-                "name": "Truffle Risotto",
-                "description": "Creamy risotto with truffle oil and parmesan cheese.",
-                "price": 18.99
+                "name": "Quinoa and Kale Salad",
+                "description": "Quinoa and kale salad with cranberries, almonds, and a light vinaigrette.",
+                "price": 14.99
             },
             {
                 "id": "SP05-02",
-                "name": "Duck à l'Orange",
-                "description": "Roasted duck breast with an orange glaze.",
-                "price": 25.99
+                "name": "Lentil and Vegetable Stew",
+                "description": "Hearty lentil stew with mixed vegetables and a blend of spices.",
+                "price": 12.99
             },
             {
                 "id": "SP05-03",
-                "name": "Ribeye Steak",
-                "description": "Juicy ribeye steak cooked to perfection, served with mashed potatoes.",
-                "price": 27.99
+                "name": "Herb-Crusted Lamb Chops",
+                "description": "Lamb chops crusted with fresh herbs, served with a side of roasted Brussels sprouts.",
+                "price": 26.99
             },
             {
                 "id": "SP05-04",
-                "name": "Lobster Bisque",
-                "description": "Rich and creamy lobster soup.",
-                "price": 15.99
+                "name": "Miso Glazed Eggplant",
+                "description": "Eggplant glazed with miso and sesame, served with brown rice.",
+                "price": 13.99
             }
         ]
     }
+
 ]

@@ -1,15 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() {
     tryRun(genMenuNav)
+    tryRun(genMenuFill(menu[1].id))
     console.log(menu)
 });
 
 function addPopup (text, buttonText, fn = 'rem', color = 3, buttonColor = 0) {
+    const uniqueId = 'pop-up-' + Date.now();
     const colors = ['bcol1', 'bcol2', 'bcol3', 'bcol4', 'bcol5', 'red']
-    const fill = `  <div class="pop-up container gap15 pad10 rad15 center sbet f1 ${colors[color % colors.length]}">
+    const fill = `  <div id="${uniqueId}" class="pop-up container gap15 pad10 rad15 center sbet f1 ${colors[color % colors.length]}">
                         <p class="mont">${text}</p>
                         <button class="res-button button pad10 rad5 ${colors[buttonColor % colors.length]}" onclick="${fn}"><p class="bold ts15 mont">${buttonText}</p></button>
                     </div>`
     document.getElementById('pop-up-wrapper').innerHTML += fill
+    setTimeout(() => {
+        const popUp = document.getElementById(uniqueId);
+        if (popUp) {
+            popUp.remove();
+        }
+    }, 5000)
 }
 
 function verif () {
@@ -62,7 +70,7 @@ function genMenuFill (categoryId) {
     category.items.forEach(item => {
         wrapper.insertAdjacentHTML('beforeend', `
             <div class="item container pos-rel rad5 ovx-h" onclick="menuClick('${item.id}')">
-                <img src="../global/imgs/placeholder.png" class="fit-img rad5">
+                <img src="../global/data/imgs/${item.id}.png" class="fit-img rad5">
                 <div class="w100 h100 pos-abs"></div>
                 <p class="item-desc mont pos-abs pad5 ts15 col1 bcol3 w100 elipsis">${item.description}</p>
                 <p class="item-name mont pos-abs pad5 bolder col3 ts25 w100 elipsis">${item.name}</p>
@@ -84,6 +92,10 @@ function toggleAddonsMenu(str) {
 }
 
 function menuClick (id) {
+    if (localStoreGet('isLoggedIn') === 'false') {
+        addPopup('Login / Register to order', 'Here', "toggleModal('loginModal')")
+        return
+    }
     const item = findMenuItem(id)
     const modal = document.getElementById('addonsModal')
     toggleModal('addonsModal')
@@ -91,6 +103,7 @@ function menuClick (id) {
     modal.querySelector('#addonsName').textContent = item.name
     modal.querySelector('#addonsDesc').textContent = item.description
     modal.querySelector('#addonsPrice').textContent = item.price
+    modal.querySelector('#addonsImg').src = `../global/data/imgs/${item.id}.png`
 
     modal.querySelector('#addons-buttons').innerHTML = `
     <div onclick="toggleModal('addonsModal')" class="container button center jcenter bcol2 col3 pad10 rad5 mont bold ts15"><p>Cancel</p></div>
@@ -102,6 +115,7 @@ function submit (id) {
     const amount = modal.querySelector('#addonsAmount').value
     const note = modal.querySelector('#addonsNote').value
     genCartItem(id, amount, note, "none")
+
 }
 
 function genCartItem (id, amount, note,...addons) {

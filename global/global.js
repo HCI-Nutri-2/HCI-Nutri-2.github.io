@@ -36,27 +36,31 @@ function loadHeader() {
     const curr = currPageName();
 
     const menu = `<div class="res-button button bcol2 rad5 gap10" onclick="navTo('../index.html')"><img src="../global/icons/home.png"><p class="mont rem720">Menu</p></div>`;
+    const cart = `<div class="res-button button bcol2 rad5 gap10" onclick="navTo('../cart/index.html')"><img src="../global/icons/cart.png"></div>`;
     const history = `<div class="res-button button bcol2 rad5 gap10" onclick="navTo('../history/history.html')"><img src="../global/icons/history.png"><p class="mont rem720">History</p></div>`;
     const user = `<div class="res-button button bcol2 rad5 gap10" onclick="navTo('../profile/profile.html')"><img src="../global/icons/user.png"><p class="mont rem1280">You</p></div>`;
     const admin = `<div class="res-button button bcol2 rad5 gap10" onclick="navTo('../admin/admin.html')"><img src="../global/icons/admin.png"><p class="mont rem1280">Admin</p></div>`;
     
-    wrapper.innerHTML = '<div class="button bcol1 col3 pad10 rad5 mont bold" onclick="(logout())" >Sign out</div>';
+    wrapper.innerHTML = '<div class="button bcol1 col3 pad10 rad5 mont bold" onclick="(logout())">Sign out</div>';
     
     if (isLoggedIn === 'true') {
         if (curr === "menu") {
-            wrapper.innerHTML += history + user;
+            wrapper.innerHTML += cart + history + user;
             searchInput.placeholder = 'Search a Dish';
         } else if (curr === "history") {
-            wrapper.innerHTML += menu + user;
+            wrapper.innerHTML += cart + menu + user;
             searchInput.placeholder = 'Search a Transaction';
         } else if (curr === "user") {
-            wrapper.innerHTML += menu + history;
+            wrapper.innerHTML += cart + menu + history;
             searchBar.classList.add('none');
+        } else if (curr === "cart") {
+            wrapper.innerHTML += menu + history + user;
+            searchInput.placeholder = 'Search an Item';
         } else if (curr === "faq") {
-            wrapper.innerHTML += menu + history + user;
-            searchBar.classList.add('none');
+            wrapper.innerHTML += cart + menu + history + user;
+            searchInput.placeholder = 'Search a Guide';
         } else {
-            wrapper.innerHTML += menu + history + user;
+            wrapper.innerHTML += cart + menu + history + user;
         }
         if (isAdmin === 'true' && curr != "admin") {
             wrapper.innerHTML += admin;
@@ -139,15 +143,20 @@ function localStoreRem (key) {
 }
 
 function fetchData (path, key) {
-    return fetch(path)
-        .then(res => res.json())
-        .then(json => {
-            localStoreSet(key, JSON.stringify(json));
-            return json;
-        })
-        .catch(error => {
-            return error;
-        });
+    let data = localStoreGet(key)
+    if (!data) {
+        return fetch(path)
+            .then(res => res.json())
+            .then(json => {
+                localStoreSet(key, JSON.stringify(json));
+                return json;
+            })
+            .catch(error => {
+                return false;
+            });
+    } else {
+        return JSON.parse(data)
+    }
 }
 
 function currPageName () {return document.body.id}

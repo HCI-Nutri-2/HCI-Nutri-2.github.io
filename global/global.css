@@ -309,8 +309,10 @@ img {
 }
 
 /* button styling & hover effects */
-.button {transition: all 0.2s ease;
-        cursor: pointer;}
+.button {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
 
 .button.bcol1:hover {background-color: var(--1a);}
 .button.bcol2:hover {background-color: var(--2a);}
